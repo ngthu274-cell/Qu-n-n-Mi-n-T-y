@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiệm Bún Mắm Miền Tây</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="game">
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div>
+      <div class="sub-title">🌴 MIỀN TÂY QUÊ MÌNH</div>
+      <h1 id="shopName">Tiệm Bún Mắm</h1>
+    </div>
+
+    <button class="setting-btn" onclick="openSettings()">⚙️</button>
+  </header>
+
+
+  <!-- THÔNG TIN -->
+  <section class="stats">
+
+    <div class="stat">
+      <span>🕐</span>
+      <div>
+        <b id="time">07:00</b>
+        <small id="day">Ngày 1</small>
+      </div>
+    </div>
+
+    <div class="stat">
+      <span>💰</span>
+      <div>
+        <b id="money">30.000.000đ</b>
+        <small>Vốn</small>
+      </div>
+    </div>
+
+    <div class="stat">
+      <span>⭐</span>
+      <div>
+        <b id="rating">5.0</b>
+        <small id="reviews">0 đánh giá</small>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- KHUNG QUÁN -->
+  <section class="restaurant">
+
+    <div class="sun">☀️</div>
+
+    <div class="cloud cloud1">☁️</div>
+    <div class="cloud cloud2">☁️</div>
+
+    <div class="palm palm-left">🌴</div>
+    <div class="palm palm-right">🌴</div>
+
+    <div class="house">🏠</div>
+
+    <div class="restaurant-sign" id="restaurantSign">
+      BÚN MẮM
+    </div>
+
+    <div id="customers"></div>
+
+    <div class="counter">
+
+      <div>🍲</div>
+      <div>🥣</div>
+      <div>🫖</div>
+      <div>🧑‍🍳</div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GAME CONTENT -->
+  <main id="content"></main>
+
+
+  <!-- MENU -->
+  <nav class="bottom-menu">
+
+    <button class="menu-button active" onclick="changeTab('shop')">
+      🏪
+      <span>Tiệm</span>
+    </button>
+
+    <button class="menu-button" onclick="changeTab('warehouse')">
+      📦
+      <span>Kho</span>
+    </button>
+
+    <button class="menu-button" onclick="changeTab('staff')">
+      👩‍🍳
+      <span>Nhân viên</span>
+    </button>
+
+    <button class="menu-button" onclick="changeTab('upgrade')">
+      🔧
+      <span>Nâng cấp</span>
+    </button>
+
+  </nav>
+
+</div>
+
+
+<!-- MODAL -->
+<div id="modal" class="modal hidden"></div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
