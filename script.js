@@ -25,7 +25,7 @@ const MENU = {
       "fish",
       "eggplant",
       "water",
-      "banana",
+      "vegetable",
       "chili",
       "sauce"
     ]
@@ -44,7 +44,7 @@ const MENU = {
       "fish",
       "eggplant",
       "water",
-      "banana",
+      "vegetable",
       "chili",
       "sauce"
     ]
@@ -309,7 +309,7 @@ function createNewGame() {
 
   return {
 
-    shopName: "Tiệm Bún Mắm",
+    shopName: "Quán ăn của ngoại",
 
     money: 30000000,
 
@@ -574,7 +574,7 @@ function startGame() {
 
   game.shopName =
     input.value.trim()
-    || "Tiệm Bún Mắm";
+    || "Quán ăn của Ngoại";
 
   saveGame();
 
