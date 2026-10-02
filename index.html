@@ -1,124 +1,256 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tiệm Bún Mắm Miền Tây</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,
+          initial-scale=1.0,
+          maximum-scale=1.0,
+          user-scalable=no">
+
+    <title>Tiệm Bún Mắm Miền Tây</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div id="game">
 
-  <!-- HEADER -->
-  <header class="topbar">
-    <div>
-      <div class="sub-title">🌴 MIỀN TÂY QUÊ MÌNH</div>
-      <h1 id="shopName">Tiệm Bún Mắm</h1>
-    </div>
+    <!-- ================= HEADER ================= -->
 
-    <button class="setting-btn" onclick="openSettings()">⚙️</button>
-  </header>
+    <header class="top-header">
 
+        <div class="top-left">
 
-  <!-- THÔNG TIN -->
-  <section class="stats">
+            <button class="round-button" onclick="pauseGame()">
+                ⏸
+            </button>
 
-    <div class="stat">
-      <span>🕐</span>
-      <div>
-        <b id="time">07:00</b>
-        <small id="day">Ngày 1</small>
-      </div>
-    </div>
+            <div>
+                <div class="day-title" id="dayText">
+                    Ngày 1
+                </div>
 
-    <div class="stat">
-      <span>💰</span>
-      <div>
-        <b id="money">30.000.000đ</b>
-        <small>Vốn</small>
-      </div>
-    </div>
+                <div class="game-time" id="timeText">
+                    07:00
+                </div>
+            </div>
 
-    <div class="stat">
-      <span>⭐</span>
-      <div>
-        <b id="rating">5.0</b>
-        <small id="reviews">0 đánh giá</small>
-      </div>
-    </div>
-
-  </section>
+        </div>
 
 
-  <!-- KHUNG QUÁN -->
-  <section class="restaurant">
+        <div class="money-box">
 
-    <div class="sun">☀️</div>
+            <span>KẾT</span>
 
-    <div class="cloud cloud1">☁️</div>
-    <div class="cloud cloud2">☁️</div>
+            <strong id="moneyText">
+                30.000,0k
+            </strong>
 
-    <div class="palm palm-left">🌴</div>
-    <div class="palm palm-right">🌴</div>
-
-    <div class="house">🏠</div>
-
-    <div class="restaurant-sign" id="restaurantSign">
-      BÚN MẮM
-    </div>
-
-    <div id="customers"></div>
-
-    <div class="counter">
-
-      <div>🍲</div>
-      <div>🥣</div>
-      <div>🫖</div>
-      <div>🧑‍🍳</div>
-
-    </div>
-
-  </section>
+        </div>
 
 
-  <!-- GAME CONTENT -->
-  <main id="content"></main>
+        <div class="rating-box">
+
+            <div id="starsText">
+                ★★★★★
+            </div>
+
+            <small id="ratingText">
+                5,0 · 0 đánh giá
+            </small>
+
+        </div>
+
+    </header>
 
 
-  <!-- MENU -->
-  <nav class="bottom-menu">
+    <!-- ================= SHOP SCENE ================= -->
 
-    <button class="menu-button active" onclick="changeTab('shop')">
-      🏪
-      <span>Tiệm</span>
-    </button>
+    <section class="shop-scene">
 
-    <button class="menu-button" onclick="changeTab('warehouse')">
-      📦
-      <span>Kho</span>
-    </button>
+        <div class="shop-awning">
 
-    <button class="menu-button" onclick="changeTab('staff')">
-      👩‍🍳
-      <span>Nhân viên</span>
-    </button>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
 
-    <button class="menu-button" onclick="changeTab('upgrade')">
-      🔧
-      <span>Nâng cấp</span>
-    </button>
+        </div>
 
-  </nav>
+
+        <div class="lantern lantern-left">
+            🏮
+        </div>
+
+        <div class="lantern lantern-right">
+            🏮
+        </div>
+
+
+        <div class="shop-sign">
+
+            <div id="shopNameScene">
+                TIỆM BÚN MẮM
+            </div>
+
+            <small>
+                MIỀN TÂY QUÊ MÌNH
+            </small>
+
+        </div>
+
+
+        <div class="palm-tree palm-one">
+            🌴
+        </div>
+
+        <div class="palm-tree palm-two">
+            🌴
+        </div>
+
+
+        <div class="shop-character" id="mainCharacter">
+            👩🏻‍🍳
+        </div>
+
+
+        <div class="customer-bubble" id="customerBubble">
+            Trời ơi thơm quá!
+        </div>
+
+
+        <div id="customerScene"></div>
+
+
+        <div class="shop-counter">
+
+            <div>🍲</div>
+            <div>🥣</div>
+            <div>🫖</div>
+            <div>🥥</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TAB MENU ================= -->
+
+    <nav class="tab-menu">
+
+        <button
+            class="tab active"
+            data-tab="shop"
+            onclick="changeTab('shop')">
+
+            🏪
+            <span>Tiệm</span>
+
+        </button>
+
+
+        <button
+            class="tab"
+            data-tab="warehouse"
+            onclick="changeTab('warehouse')">
+
+            🧺
+            <span>Kho</span>
+
+        </button>
+
+
+        <button
+            class="tab"
+            data-tab="price"
+            onclick="changeTab('price')">
+
+            🏷️
+            <span>Giá bán</span>
+
+        </button>
+
+
+        <button
+            class="tab"
+            data-tab="upgrade"
+            onclick="changeTab('upgrade')">
+
+            ⬆️
+            <span>Nâng cấp</span>
+
+        </button>
+
+
+        <button
+            class="tab"
+            data-tab="decorate"
+            onclick="changeTab('decorate')">
+
+            🌸
+            <span>Trang trí</span>
+
+        </button>
+
+
+        <button
+            class="tab"
+            data-tab="rating"
+            onclick="changeTab('rating')">
+
+            ⭐
+            <span>Đánh giá</span>
+
+        </button>
+
+
+        <button
+            class="tab"
+            data-tab="book"
+            onclick="changeTab('book')">
+
+            📒
+            <span>Sổ sách</span>
+
+        </button>
+
+    </nav>
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <main id="content"></main>
+
+
+    <!-- ================= BOTTOM ================= -->
+
+    <div class="bottom-space"></div>
 
 </div>
 
 
-<!-- MODAL -->
-<div id="modal" class="modal hidden"></div>
+<!-- ================= MODAL ================= -->
 
-<!-- TOAST -->
+<div
+    id="modal"
+    class="modal hidden">
+
+    <div
+        id="modalContent"
+        class="modal-box">
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
 <div id="toast"></div>
 
 
