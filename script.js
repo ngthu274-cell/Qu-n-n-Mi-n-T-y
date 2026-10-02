@@ -1,9 +1,7 @@
 /* =====================================================
    TIỆM BÚN MẮM MIỀN TÂY
-   VERSION 2
+   GAME ENGINE
 ===================================================== */
-
-const SAVE_KEY = "QUAN_AN_MIEN_TAY";
 
 
 /* =====================================================
@@ -12,134 +10,197 @@ const SAVE_KEY = "QUAN_AN_MIEN_TAY";
 
 const MENU = {
 
-  bun: {
-    name: "Bún mắm",
-    emoji: "🍜",
-    price: 55000,
-    cost: 22000,
+    bunMam: {
 
-    ingredients: [
-      "shrimp",
-      "squid",
-      "pork",
-      "fish",
-      "eggplant",
-      "water",
-      "vegetable",
-      "chili",
-      "sauce"
-    ]
-  },
+        name: "Bún mắm",
 
-  lau: {
-    name: "Lẩu mắm",
-    emoji: "🍲",
-    price: 180000,
-    cost: 85000,
+        emoji: "🍜",
 
-    ingredients: [
-      "shrimp",
-      "squid",
-      "pork",
-      "fish",
-      "eggplant",
-      "water",
-      "vegetable",
-      "chili",
-      "sauce"
-    ]
-  },
+        basePrice: 55000,
 
-  rice: {
-    name: "Cơm",
-    emoji: "🍚",
-    price: 35000,
-    cost: 12000,
+        cost: 22000,
 
-    ingredients: ["rice"]
-  },
+        ingredients: [
+            "shrimp",
+            "squid",
+            "fish",
+            "pork",
+            "eggplant",
+            "water",
+            "banana",
+            "chili",
+            "sauce"
+        ]
 
-  crabRice: {
-    name: "Cơm ba khía",
-    emoji: "🍚🦀",
-    price: 55000,
-    cost: 26000,
+    },
 
-    ingredients: [
-      "rice",
-      "crab"
-    ]
-  },
 
-  icedTea: {
-    name: "Trà đá",
-    emoji: "🧊🍵",
-    price: 10000,
-    cost: 3000,
+    lauMam: {
 
-    ingredients: [
-      "tea",
-      "ice"
-    ]
-  },
+        name: "Lẩu mắm",
 
-  sugarTea: {
-    name: "Trà đường",
-    emoji: "🍵",
-    price: 15000,
-    cost: 5000,
+        emoji: "🍲",
 
-    ingredients: [
-      "tea",
-      "sugar"
-    ]
-  },
+        basePrice: 180000,
 
-  coffeeTea: {
-    name: "Trà đường + cà phê",
-    emoji: "🍵☕",
-    price: 22000,
-    cost: 8000,
+        cost: 85000,
 
-    ingredients: [
-      "tea",
-      "sugar",
-      "coffee"
-    ]
-  },
+        ingredients: [
+            "shrimp",
+            "squid",
+            "fish",
+            "pork",
+            "eggplant",
+            "water",
+            "banana",
+            "chili",
+            "sauce"
+        ]
 
-  snack: {
-    name: "Bánh snack",
-    emoji: "🍘",
-    price: 12000,
-    cost: 6000,
+    },
 
-    ingredients: [
-      "snack"
-    ]
-  },
 
-  coconut: {
-    name: "Kẹo dừa",
-    emoji: "🥥",
-    price: 10000,
-    cost: 4500,
+    com: {
 
-    ingredients: [
-      "coconut"
-    ]
-  },
+        name: "Cơm",
 
-  coffee: {
-    name: "Cà phê đen",
-    emoji: "☕",
-    price: 18000,
-    cost: 7000,
+        emoji: "🍚",
 
-    ingredients: [
-      "coffee"
-    ]
-  }
+        basePrice: 35000,
+
+        cost: 12000,
+
+        ingredients: [
+            "rice"
+        ]
+
+    },
+
+
+    crabRice: {
+
+        name: "Cơm ba khía",
+
+        emoji: "🦀",
+
+        basePrice: 55000,
+
+        cost: 26000,
+
+        ingredients: [
+            "rice",
+            "crab"
+        ]
+
+    },
+
+
+    icedTea: {
+
+        name: "Trà đá",
+
+        emoji: "🧊",
+
+        basePrice: 10000,
+
+        cost: 3000,
+
+        ingredients: [
+            "tea",
+            "ice"
+        ]
+
+    },
+
+
+    sugarTea: {
+
+        name: "Trà đường",
+
+        emoji: "🧋",
+
+        basePrice: 15000,
+
+        cost: 5000,
+
+        ingredients: [
+            "tea",
+            "ice",
+            "sugar"
+        ]
+
+    },
+
+
+    coffeeTea: {
+
+        name: "Trà đường cà phê",
+
+        emoji: "☕",
+
+        basePrice: 22000,
+
+        cost: 8000,
+
+        ingredients: [
+            "tea",
+            "ice",
+            "sugar",
+            "coffee"
+        ]
+
+    },
+
+
+    snack: {
+
+        name: "Snack",
+
+        emoji: "🍿",
+
+        basePrice: 12000,
+
+        cost: 6000,
+
+        ingredients: [
+            "snack"
+        ]
+
+    },
+
+
+    coconut: {
+
+        name: "Kẹo dừa",
+
+        emoji: "🥥",
+
+        basePrice: 10000,
+
+        cost: 4500,
+
+        ingredients: [
+            "coconut"
+        ]
+
+    },
+
+
+    coffee: {
+
+        name: "Cà phê đen",
+
+        emoji: "☕",
+
+        basePrice: 18000,
+
+        cost: 7000,
+
+        ingredients: [
+            "coffee"
+        ]
+
+    }
 
 };
 
@@ -150,39 +211,124 @@ const MENU = {
 
 const INGREDIENTS = {
 
-  shrimp: ["Tôm", "🦐", 7000, true],
+    shrimp: {
+        name: "Tôm",
+        emoji: "🦐",
+        price: 3500,
+        fresh: true
+    },
 
-  squid: ["Mực", "🦑", 8000, true],
+    squid: {
+        name: "Mực",
+        emoji: "🦑",
+        price: 4500,
+        fresh: true
+    },
 
-  pork: ["Thịt quay", "🥩", 9000, true],
+    pork: {
+        name: "Thịt quay",
+        emoji: "🥩",
+        price: 5000,
+        fresh: true
+    },
 
-  fish: ["Cá phile", "🐟", 7000, true],
+    fish: {
+        name: "Cá filé",
+        emoji: "🐟",
+        price: 4500,
+        fresh: true
+    },
 
-  eggplant: ["Cà tím", "🍆", 2500, true],
+    eggplant: {
+        name: "Cà tím",
+        emoji: "🍆",
+        price: 1500,
+        fresh: true
+    },
 
-  water: ["Dọc mùng", "🌿", 2000, true],
+    water: {
+        name: "Dọc mùng",
+        emoji: "🥬",
+        price: 1200,
+        fresh: true
+    },
 
-  banana: ["Rau chuối", "🥬", 1800, true],
+    banana: {
+        name: "Rau chuối",
+        emoji: "🌿",
+        price: 1200,
+        fresh: true
+    },
 
-  chili: ["Ớt", "🌶️", 1000, true],
+    chili: {
+        name: "Ớt",
+        emoji: "🌶️",
+        price: 800,
+        fresh: true
+    },
 
-  sauce: ["Nước sốt mẹ", "🥣", 2500, true],
+    sauce: {
+        name: "Nước sốt mẹ",
+        emoji: "🥣",
+        price: 2000,
+        fresh: false
+    },
 
-  rice: ["Gạo", "🍚", 1800, false],
+    rice: {
+        name: "Cơm",
+        emoji: "🍚",
+        price: 1500,
+        fresh: false
+    },
 
-  crab: ["Ba khía", "🦀", 7000, true],
+    crab: {
+        name: "Ba khía",
+        emoji: "🦀",
+        price: 6000,
+        fresh: true
+    },
 
-  tea: ["Trà", "🍵", 1200, false],
+    tea: {
+        name: "Trà",
+        emoji: "🍵",
+        price: 1000,
+        fresh: false
+    },
 
-  ice: ["Đá", "🧊", 700, false],
+    ice: {
+        name: "Đá",
+        emoji: "🧊",
+        price: 500,
+        fresh: false
+    },
 
-  sugar: ["Đường", "🍬", 800, false],
+    sugar: {
+        name: "Đường",
+        emoji: "🍬",
+        price: 500,
+        fresh: false
+    },
 
-  coffee: ["Cà phê", "☕", 2500, false],
+    coffee: {
+        name: "Cà phê",
+        emoji: "☕",
+        price: 1500,
+        fresh: false
+    },
 
-  snack: ["Snack", "🍘", 5000, false],
+    snack: {
+        name: "Snack",
+        emoji: "🍿",
+        price: 3000,
+        fresh: false
+    },
 
-  coconut: ["Kẹo dừa", "🥥", 4500, false]
+    coconut: {
+        name: "Kẹo dừa",
+        emoji: "🥥",
+        price: 2500,
+        fresh: false
+    }
 
 };
 
@@ -191,45 +337,57 @@ const INGREDIENTS = {
    NHÂN VIÊN
 ===================================================== */
 
-const STAFF = [
+const STAFF = {
 
-  {
-    id: "cashier",
-    emoji: "🧑‍💼",
-    name: "Tí Thu Ngân",
-    job: "Thu ngân",
-    description:
-      "Tính tiền chính xác, hạn chế khách đưa thiếu."
-  },
+    cashier: {
 
-  {
-    id: "broth",
-    emoji: "👨‍🍳",
-    name: "Út Múc Lèo",
-    job: "Múc nước lèo",
-    description:
-      "Múc nước lèo cho khách nhưng đôi lúc làm đổ."
-  },
+        name: "Tí Thu Ngân",
 
-  {
-    id: "topping",
-    emoji: "👩‍🍳",
-    name: "Bảy Topping",
-    job: "Bỏ topping",
-    description:
-      "Bỏ topping vào tô nhưng đôi lúc bỏ thiếu."
-  },
+        job: "Thu ngân",
 
-  {
-    id: "care",
-    emoji: "🧑‍🌾",
-    name: "Hai Chăm Khách",
-    job: "Chăm sóc khách",
-    description:
-      "Rót trà cho khách đang gần hết kiên nhẫn."
-  }
+        emoji: "👩🏻‍💼",
 
-];
+        price: 3000000
+
+    },
+
+    broth: {
+
+        name: "Út Múc Lèo",
+
+        job: "Múc nước lèo",
+
+        emoji: "👩🏻‍🍳",
+
+        price: 3000000
+
+    },
+
+    topping: {
+
+        name: "Bảy Topping",
+
+        job: "Chuẩn bị topping",
+
+        emoji: "🧑🏻‍🍳",
+
+        price: 3000000
+
+    },
+
+    care: {
+
+        name: "Hai Chăm Khách",
+
+        job: "Chăm sóc khách hàng",
+
+        emoji: "👩🏻",
+
+        price: 3000000
+
+    }
+
+};
 
 
 /* =====================================================
@@ -238,59 +396,103 @@ const STAFF = [
 
 const UPGRADES = [
 
-  {
-    id: "fan",
-    emoji: "🌀",
-    name: "Quạt gió mát rười rượi",
-    price: 2000000,
-    description:
-      "Khách kiên nhẫn thêm 10%."
-  },
+    {
+        id: "fan",
+        name: "Quạt gió mát rười rượi",
+        emoji: "🌀",
+        price: 2000000,
+        desc: "+10% thời gian chờ của khách"
+    },
 
-  {
-    id: "license",
-    emoji: "📜",
-    name: "Giấy phép kinh doanh",
-    price: 5000000,
-    description:
-      "Không bị công an đột xuất phạt tiền."
-  },
+    {
+        id: "license",
+        name: "Giấy phép kinh doanh",
+        emoji: "📜",
+        price: 5000000,
+        desc: "Không bị phạt bất ngờ"
+    },
 
-  {
-    id: "roof",
-    emoji: "⛱️",
-    name: "Mái che",
-    price: 6000000,
-    description:
-      "Khách kiên nhẫn thêm 20%."
-  },
+    {
+        id: "roof",
+        name: "Mái che miền Tây",
+        emoji: "🏠",
+        price: 6000000,
+        desc: "+20% thời gian chờ"
+    },
 
-  {
-    id: "pos",
-    emoji: "💳",
-    name: "Máy POS",
-    price: 10000000,
-    description:
-      "Tính tiền nhanh và chính xác."
-  },
+    {
+        id: "pos",
+        name: "Máy POS",
+        emoji: "💳",
+        price: 10000000,
+        desc: "Thanh toán nhanh và chính xác"
+    },
 
-  {
-    id: "led",
-    emoji: "💡",
-    name: "Biển hiệu LED nổi nhất huyện",
-    price: 15000000,
-    description:
-      "Khách đến quán nhiều hơn 10%."
-  },
+    {
+        id: "sign",
+        name: "Biển hiệu đèn LED nổi nhất huyện",
+        emoji: "💡",
+        price: 15000000,
+        desc: "+10% lượng khách"
+    },
 
-  {
-    id: "freezer",
-    emoji: "🧊",
-    name: "Tủ lạnh cấp đông",
-    price: 20000000,
-    description:
-      "Giữ đồ tươi lâu hơn."
-  }
+    {
+        id: "freezer",
+        name: "Tủ lạnh cấp đông",
+        emoji: "🧊",
+        price: 20000000,
+        desc: "Giữ nguyên liệu tươi lâu hơn"
+    }
+
+];
+
+
+/* =====================================================
+   KHÁCH
+===================================================== */
+
+const CUSTOMER_NAMES = [
+
+    "Anh Quang Khải",
+    "Chị Ngọc Hân",
+    "Cô Hai",
+    "Chú Ba",
+    "Anh Minh",
+    "Chị Thảo",
+    "Bé Na",
+    "Anh Tuấn",
+    "Chị My",
+    "Cô Sáu",
+    "Chú Tư",
+    "Anh Khoa"
+];
+
+
+const CUSTOMER_AVATARS = [
+
+    "👨🏻",
+    "👩🏻",
+    "👩🏻‍🦳",
+    "👨🏻‍🦳",
+    "👧🏻",
+    "👦🏻"
+
+];
+
+
+const CUSTOMER_TALKS = [
+
+    "Trời ơi thơm quá!",
+
+    "Mùi nước lèo hấp dẫn ghê!",
+
+    "Quán hôm nay đông quá!",
+
+    "Cho em thêm rau nha!",
+
+    "Nóng lòng muốn ăn quá!",
+
+    "Mùi này đúng quê mình luôn!"
 
 ];
 
@@ -299,84 +501,185 @@ const UPGRADES = [
    GAME STATE
 ===================================================== */
 
-function createNewGame() {
+let game;
 
-  let stock = {};
 
-  Object.keys(INGREDIENTS).forEach(
-    key => stock[key] = 8
-  );
+/* =====================================================
+   KHỞI TẠO
+===================================================== */
 
-  return {
+function createNewGame(shopName) {
 
-    shopName: "Quán ăn của ngoại",
+    const stock = {};
 
-    money: 30000000,
+    Object.keys(INGREDIENTS).forEach(key => {
 
-    day: 1,
+        stock[key] =
+            INGREDIENTS[key].fresh
+                ? 10
+                : 20;
 
-    hour: 7,
+    });
 
-    minute: 0,
 
-    rating: 5,
+    const prices = {};
 
-    reviews: [],
+    Object.keys(MENU).forEach(key => {
 
-    stock: stock,
+        prices[key] =
+            MENU[key].basePrice;
 
-    orders: [],
+    });
 
-    currentTab: "shop",
 
-    upgrades: [],
+    return {
 
-    staff: [],
+        shopName:
+            shopName || "Tiệm Bún Mắm",
 
-    prices: {},
+        money:
+            30000000,
 
-    muted: false,
+        day:
+            1,
 
-    closed: false,
+        hour:
+            7,
 
-    cookingOrder: null
+        minute:
+            0,
 
-  };
+        rating:
+            5,
+
+        reviews:
+            0,
+
+        stock,
+
+        prices,
+
+        orders: [],
+
+        servedToday:
+            0,
+
+        appToday:
+            0,
+
+        fiveStarToday:
+            0,
+
+        xp:
+            0,
+
+        closed:
+            false,
+
+        paused:
+            false,
+
+        staff: {
+
+            cashier: false,
+
+            broth: false,
+
+            topping: false,
+
+            care: false
+
+        },
+
+        upgrades: [],
+
+        tasks: {
+
+            sold: 0,
+
+            fiveStar: 0,
+
+            app: 0
+
+        },
+
+        selectedTab:
+            "shop"
+
+    };
 
 }
 
 
-let game =
-  JSON.parse(
-    localStorage.getItem(SAVE_KEY)
-  ) || createNewGame();
-
-
 /* =====================================================
-   SAVE
+   LOAD / SAVE
 ===================================================== */
 
 function saveGame() {
 
-  localStorage.setItem(
-    SAVE_KEY,
-    JSON.stringify(game)
-  );
+    localStorage.setItem(
+        "TIEM_BUN_MAM_FINAL",
+        JSON.stringify(game)
+    );
+
+}
+
+
+function loadGame() {
+
+    const data =
+        localStorage.getItem(
+            "TIEM_BUN_MAM_FINAL"
+        );
+
+    if (!data) return false;
+
+    try {
+
+        game = JSON.parse(data);
+
+        return true;
+
+    } catch {
+
+        return false;
+
+    }
 
 }
 
 
 /* =====================================================
-   MONEY
+   TIỀN
 ===================================================== */
 
-function money(number) {
+function money(value) {
 
-  return new Intl.NumberFormat(
-    "vi-VN"
-  ).format(
-    Math.round(number)
-  ) + "đ";
+    return Math.round(value)
+        .toLocaleString("vi-VN");
+
+}
+
+
+function moneyShort(value) {
+
+    if (value >= 1000000) {
+
+        return (
+            (value / 1000000)
+                .toFixed(1)
+                .replace(".", ",")
+            + "tr"
+        );
+
+    }
+
+    return (
+        (value / 1000)
+            .toFixed(1)
+            .replace(".", ",")
+        + "k"
+    );
 
 }
 
@@ -385,26 +688,27 @@ function money(number) {
    TOAST
 ===================================================== */
 
+let toastTimer;
+
+
 function toast(message) {
 
-  const div =
-    document.createElement("div");
+    const el =
+        document.getElementById("toast");
 
-  div.className =
-    "toast-message";
+    el.textContent =
+        message;
 
-  div.textContent =
-    message;
+    el.classList.add("show");
 
-  document
-    .getElementById("toast")
-    .appendChild(div);
+    clearTimeout(toastTimer);
 
-  setTimeout(() => {
+    toastTimer =
+        setTimeout(() => {
 
-    div.remove();
+            el.classList.remove("show");
 
-  }, 2800);
+        }, 2200);
 
 }
 
@@ -413,320 +717,132 @@ function toast(message) {
    SOUND
 ===================================================== */
 
-function sound(type = "click") {
+let muted = false;
 
-  if (game.muted) return;
 
-  try {
+function sound(type) {
 
-    const AudioContext =
-      window.AudioContext ||
-      window.webkitAudioContext;
+    if (muted) return;
 
-    const audio =
-      new AudioContext();
+    try {
 
-    const oscillator =
-      audio.createOscillator();
+        const AudioContext =
+            window.AudioContext ||
+            window.webkitAudioContext;
 
-    const gain =
-      audio.createGain();
+        const ctx =
+            new AudioContext();
 
-    oscillator.connect(gain);
-    gain.connect(audio.destination);
+        const osc =
+            ctx.createOscillator();
 
-    if (type === "bell") {
+        const gain =
+            ctx.createGain();
 
-      oscillator.frequency.value = 850;
+        osc.connect(gain);
 
-    }
+        gain.connect(ctx.destination);
 
-    else if (type === "pour") {
 
-      oscillator.frequency.value = 180;
+        if (type === "bell") {
 
-    }
+            osc.frequency.value = 700;
 
-    else {
+        } else if (type === "pour") {
 
-      oscillator.frequency.value = 430;
+            osc.frequency.value = 250;
 
-    }
+        } else {
 
-    gain.gain.value = 0.035;
+            osc.frequency.value = 500;
 
-    oscillator.start();
+        }
 
-    oscillator.stop(
-      audio.currentTime +
-      (
-        type === "pour"
-          ? 0.45
-          : 0.15
-      )
-    );
 
-  }
+        gain.gain.value = .04;
 
-  catch (error) {}
+        osc.start();
 
-}
-
-
-/* =====================================================
-   MODAL
-===================================================== */
-
-function openModal(html) {
-
-  const modal =
-    document.getElementById("modal");
-
-  modal.innerHTML = `
-
-    <div class="modal-box">
-
-      ${html}
-
-      <div style="
-        text-align:right;
-        margin-top:12px;
-      ">
-
-        <button
-          class="btn btn-secondary"
-          onclick="closeModal()"
-        >
-          Đóng
-        </button>
-
-      </div>
-
-    </div>
-
-  `;
-
-  modal.classList.remove("hidden");
-
-}
-
-
-function closeModal() {
-
-  document
-    .getElementById("modal")
-    .classList.add("hidden");
-
-}
-
-
-/* =====================================================
-   START GAME
-===================================================== */
-
-function askShopName() {
-
-  if (
-    localStorage.getItem(
-      SAVE_KEY
-    )
-  ) return;
-
-  openModal(`
-
-    <h2>🌴 Chào mừng về miền Tây!</h2>
-
-    <p>
-      Bạn được cấp
-      <b>30.000.000đ</b>
-      để mở quán.
-    </p>
-
-    <label>
-      Đặt tên cho tiệm:
-    </label>
-
-    <input
-      id="shopNameInput"
-      class="input"
-      placeholder="VD: Bún Mắm Út Thư"
-      maxlength="30"
-    >
-
-    <button
-      class="btn"
-      onclick="startGame()"
-    >
-      🏮 Mở cửa quán
-    </button>
-
-  `);
-
-}
-
-
-function startGame() {
-
-  const input =
-    document.getElementById(
-      "shopNameInput"
-    );
-
-  game.shopName =
-    input.value.trim()
-    || "Quán ăn của Ngoại";
-
-  saveGame();
-
-  closeModal();
-
-  render();
-
-  sound("bell");
-
-  toast(
-    "🏮 Quán đã mở cửa!"
-  );
-
-}
-
-
-/* =====================================================
-   RENDER
-===================================================== */
-
-function render() {
-
-  document.getElementById(
-    "shopName"
-  ).textContent =
-    game.shopName;
-
-  document.getElementById(
-    "restaurantSign"
-  ).textContent =
-    game.shopName.toUpperCase();
-
-  document.getElementById(
-    "money"
-  ).textContent =
-    money(game.money);
-
-  document.getElementById(
-    "time"
-  ).textContent =
-
-    String(game.hour)
-      .padStart(2, "0")
-
-    + ":" +
-
-    String(game.minute)
-      .padStart(2, "0");
-
-  document.getElementById(
-    "day"
-  ).textContent =
-    "Ngày " + game.day;
-
-  document.getElementById(
-    "rating"
-  ).textContent =
-    game.rating.toFixed(1);
-
-  document.getElementById(
-    "reviews"
-  ).textContent =
-    game.reviews.length +
-    " đánh giá";
-
-
-  document
-    .querySelectorAll(
-      ".menu-button"
-    )
-    .forEach(button => {
-
-      button.classList.remove(
-        "active"
-      );
-
-    });
-
-
-  const buttons =
-    document.querySelectorAll(
-      ".menu-button"
-    );
-
-  const tabIndex = {
-
-    shop: 0,
-
-    warehouse: 1,
-
-    staff: 2,
-
-    upgrade: 3
-
-  };
-
-  if (
-    buttons[tabIndex[game.currentTab]]
-  ) {
-
-    buttons[
-      tabIndex[game.currentTab]
-    ].classList.add("active");
-
-  }
-
-
-  renderCustomers();
-
-  renderContent();
-
-}
-
-
-/* =====================================================
-   CUSTOMERS
-===================================================== */
-
-function renderCustomers() {
-
-  const area =
-    document.getElementById(
-      "customers"
-    );
-
-  area.innerHTML = "";
-
-
-  game.orders.forEach(
-    (order, index) => {
-
-      const customer =
-        document.createElement(
-          "div"
+        osc.stop(
+            ctx.currentTime + .12
         );
 
-      customer.className =
-        "customer customer" +
-        ((index % 4) + 1);
+    } catch {}
 
-      customer.textContent =
-        order.avatar;
+}
 
-      customer.title =
-        order.name;
 
-      area.appendChild(
-        customer
-      );
+/* =====================================================
+   FORMAT TIME
+===================================================== */
+
+function timeString() {
+
+    return String(game.hour)
+        .padStart(2, "0")
+        + ":"
+        + String(game.minute)
+            .padStart(2, "0");
+
+}
+
+
+/* =====================================================
+   RATING
+===================================================== */
+
+function starsHTML() {
+
+    let html = "";
+
+    for (let i = 1; i <= 5; i++) {
+
+        html +=
+            i <= Math.round(game.rating)
+                ? "★"
+                : "☆";
 
     }
-  );
+
+    return html;
+
+}
+
+
+/* =====================================================
+   RENDER HEADER
+===================================================== */
+
+function renderHeader() {
+
+    document.getElementById("dayText")
+        .textContent =
+        `Ngày ${game.day}`;
+
+
+    document.getElementById("timeText")
+        .textContent =
+        timeString();
+
+
+    document.getElementById("moneyText")
+        .textContent =
+        moneyShort(game.money);
+
+
+    document.getElementById("starsText")
+        .textContent =
+        starsHTML();
+
+
+    document.getElementById("ratingText")
+        .textContent =
+        `${game.rating.toFixed(1).replace(".", ",")} · ${game.reviews} đánh giá`;
+
+
+    document.getElementById("shopNameScene")
+        .textContent =
+        game.shopName.toUpperCase();
 
 }
 
@@ -737,624 +853,91 @@ function renderCustomers() {
 
 function changeTab(tab) {
 
-  game.currentTab = tab;
+    game.selectedTab =
+        tab;
 
-  saveGame();
+    document
+        .querySelectorAll(".tab")
+        .forEach(button => {
 
-  render();
+            button.classList.toggle(
+                "active",
+                button.dataset.tab === tab
+            );
 
-  sound();
+        });
+
+
+    renderContent();
+
+    saveGame();
 
 }
 
 
 /* =====================================================
-   SHOP TAB
+   RENDER
 ===================================================== */
 
-function renderShop() {
+function render() {
 
-  let html = `
+    renderHeader();
 
-    <div class="card">
+    renderCustomers();
 
-      <div class="row">
-
-        <div>
-
-          <h2>🏮 Quầy bán hôm nay</h2>
-
-          <span class="muted">
-            07:00 – 19:00
-          </span>
-
-        </div>
-
-        <button
-          class="btn btn-secondary"
-          onclick="closeEarly()"
-        >
-          Đóng sớm
-        </button>
-
-      </div>
-
-    </div>
-
-  `;
-
-
-  if (game.closed) {
-
-    html += `
-
-      <div class="card empty">
-
-        <div style="font-size:50px">
-          🌙
-        </div>
-
-        <h3>
-          Hôm nay đã đóng cửa
-        </h3>
-
-        <button
-          class="btn"
-          onclick="nextDay()"
-        >
-          🌅 Sang ngày mới
-        </button>
-
-      </div>
-
-    `;
-
-  }
-
-
-  else if (
-    game.orders.length === 0
-  ) {
-
-    html += `
-
-      <div class="card empty">
-
-        <div style="font-size:50px">
-          🧑‍🌾
-        </div>
-
-        <b>
-          Đang chờ khách...
-        </b>
-
-        <p class="muted">
-          Hãy nhập đủ nguyên liệu
-          trong kho.
-        </p>
-
-      </div>
-
-    `;
-
-  }
-
-
-  game.orders.forEach(
-    (order, index) => {
-
-      const menu =
-        MENU[order.menu];
-
-      const price =
-        game.prices[
-          order.menu
-        ] ||
-        menu.price;
-
-
-      html += `
-
-        <div class="card order">
-
-          <div class="row">
-
-            <h3>
-              ${order.avatar}
-              ${order.name}
-            </h3>
-
-            <b>
-              ${money(price)}
-            </b>
-
-          </div>
-
-          <p>
-
-            ${menu.emoji}
-
-            <b>
-              ${menu.name}
-            </b>
-
-          </p>
-
-          <p class="muted">
-
-            Topping:
-
-            ${
-              order.toppings
-                .map(
-                  x =>
-                  INGREDIENTS[x][0]
-                )
-                .join(", ")
-              ||
-              "Không thêm"
-            }
-
-          </p>
-
-          <div class="patience">
-
-            <div
-              class="patience-bar"
-              style="
-                width:
-                ${order.patience}%
-              "
-            ></div>
-
-          </div>
-
-          <small>
-            Kiên nhẫn:
-            ${Math.ceil(order.patience)}%
-          </small>
-
-          <br>
-
-          <button
-            class="btn"
-            onclick="startCooking(${index})"
-          >
-            👩‍🍳 Làm món
-          </button>
-
-          <button
-            class="btn btn-secondary"
-            onclick="talkCustomer(${index})"
-          >
-            💬 Nói chuyện
-          </button>
-
-        </div>
-
-      `;
-
-    }
-  );
-
-
-  html += `
-
-    <div class="card">
-
-      <h2>
-        💰 Bảng giá
-      </h2>
-
-      <p class="muted">
-        Bạn có thể tự điều chỉnh
-        giá bán.
-      </p>
-
-      <div class="grid">
-
-  `;
-
-
-  Object.entries(MENU)
-    .forEach(
-      ([key, menu]) => {
-
-        const price =
-          game.prices[key]
-          || menu.price;
-
-
-        html += `
-
-          <div class="item">
-
-            <b>
-              ${menu.emoji}
-              ${menu.name}
-            </b>
-
-            <small>
-              Giá vốn:
-              ${money(menu.cost)}
-            </small>
-
-            <div
-              class="row"
-              style="margin-top:8px"
-            >
-
-              <input
-                class="price-input"
-                type="number"
-                value="${price}"
-                onchange="
-                  changePrice(
-                    '${key}',
-                    this.value
-                  )
-                "
-              >
-
-              <span>đ</span>
-
-            </div>
-
-          </div>
-
-        `;
-
-      }
-    );
-
-
-  html += `
-
-      </div>
-
-    </div>
-
-  `;
-
-
-  return html;
+    renderContent();
 
 }
 
 
 /* =====================================================
-   WAREHOUSE
+   RENDER CUSTOMERS
 ===================================================== */
 
-function renderWarehouse() {
+function renderCustomers() {
 
-  let html = `
-
-    <div class="card">
-
-      <h2>
-        📦 Kho nguyên liệu
-      </h2>
-
-      <p class="muted">
-        🌱 Đồ tươi chỉ để được
-        trong ngày.
-      </p>
-
-      <button
-        class="btn"
-        onclick="buyFullStock()"
-      >
-        📦 Nhập đủ hàng hôm nay
-      </button>
-
-    </div>
-
-    <div class="grid">
-
-  `;
-
-
-  Object.entries(
-    INGREDIENTS
-  ).forEach(
-    ([key, item]) => {
-
-      html += `
-
-        <div class="item">
-
-          <div class="row">
-
-            <b>
-              ${item[1]}
-              ${item[0]}
-            </b>
-
-            ${
-              item[3]
-              ? "🌱"
-              : "📦"
-            }
-
-          </div>
-
-          <h2>
-            ${game.stock[key] || 0}
-          </h2>
-
-          <small>
-            ${money(item[2])}
-            / phần
-          </small>
-
-          <br><br>
-
-          <button
-            class="btn"
-            onclick="
-              buyIngredient(
-                '${key}',
-                1
-              )
-            "
-          >
-            +1
-          </button>
-
-          <button
-            class="btn btn-secondary"
-            onclick="
-              buyIngredient(
-                '${key}',
-                5
-              )
-            "
-          >
-            +5
-          </button>
-
-        </div>
-
-      `;
-
-    }
-  );
-
-
-  html += `
-    </div>
-  `;
-
-
-  return html;
-
-}
-
-
-/* =====================================================
-   STAFF
-===================================================== */
-
-function renderStaff() {
-
-  let html = `
-
-    <div class="card">
-
-      <h2>
-        👩‍🍳 Nhân viên
-      </h2>
-
-      <p class="muted">
-        Nhân viên hỗ trợ bạn,
-        nhưng đôi khi vẫn mắc lỗi.
-      </p>
-
-    </div>
-
-    <div class="grid">
-
-  `;
-
-
-  STAFF.forEach(
-    staff => {
-
-      const hired =
-        game.staff.includes(
-          staff.id
+    const scene =
+        document.getElementById(
+            "customerScene"
         );
 
+    scene.innerHTML = "";
 
-      html += `
 
-        <div class="card">
+    const visible =
+        game.orders.slice(0, 4);
 
-          <div style="font-size:38px">
-            ${staff.emoji}
-          </div>
 
-          <h3>
-            ${staff.name}
-          </h3>
+    visible.forEach((order, index) => {
 
-          <b>
-            ${staff.job}
-          </b>
+        const div =
+            document.createElement("div");
 
-          <p class="muted">
-            ${staff.description}
-          </p>
+        div.className =
+            "scene-customer";
 
-          ${
-            hired
 
-            ?
+        div.style.left =
+            (25 + index * 22) + "%";
 
-            `
-              <b style="color:#397347">
-                ✓ Đang làm việc
-              </b>
-            `
 
-            :
+        div.textContent =
+            order.avatar;
 
-            `
-              <button
-                class="btn"
-                onclick="
-                  hireStaff(
-                    '${staff.id}'
-                  )
-                "
-              >
-                Thuê
-                3.000.000đ
-              </button>
-            `
-          }
 
-        </div>
+        scene.appendChild(div);
 
-      `;
+    });
+
+
+    if (visible.length > 0) {
+
+        document.getElementById(
+            "customerBubble"
+        ).textContent =
+            visible[0].talk;
 
     }
-  );
-
-
-  html += `
-    </div>
-  `;
-
-
-  return html;
-
-}
-
-
-/* =====================================================
-   UPGRADES
-===================================================== */
-
-function renderUpgrade() {
-
-  let html = `
-
-    <div class="card">
-
-      <h2>
-        🔧 Nâng cấp quán
-      </h2>
-
-      <p class="muted">
-        Mua theo thứ tự từ rẻ
-        đến mắc.
-      </p>
-
-    </div>
-
-    <div class="grid">
-
-  `;
-
-
-  UPGRADES.forEach(
-    (upgrade, index) => {
-
-      const bought =
-        game.upgrades.includes(
-          upgrade.id
-        );
-
-      const locked =
-        index > 0 &&
-        !game.upgrades.includes(
-          UPGRADES[index - 1].id
-        );
-
-
-      html += `
-
-        <div class="card">
-
-          <div style="font-size:38px">
-            ${upgrade.emoji}
-          </div>
-
-          <h3>
-            ${upgrade.name}
-          </h3>
-
-          <p class="muted">
-            ${upgrade.description}
-          </p>
-
-          <div class="row">
-
-            <b>
-              ${money(upgrade.price)}
-            </b>
-
-            ${
-              bought
-
-              ?
-
-              `
-                <span
-                  style="
-                    color:#397347
-                  "
-                >
-                  ✓ Đã mua
-                </span>
-              `
-
-              :
-
-              locked
-
-              ?
-
-              `
-                <span>
-                  🔒
-                </span>
-              `
-
-              :
-
-              `
-                <button
-                  class="btn"
-                  onclick="
-                    buyUpgrade(
-                      '${upgrade.id}'
-                    )
-                  "
-                >
-                  Mua
-                </button>
-              `
-            }
-
-          </div>
-
-        </div>
-
-      `;
-
-    }
-  );
-
-
-  html += `
-    </div>
-  `;
-
-
-  return html;
 
 }
 
@@ -1365,240 +948,658 @@ function renderUpgrade() {
 
 function renderContent() {
 
-  let html = "";
+    const content =
+        document.getElementById(
+            "content"
+        );
 
 
-  if (
-    game.cookingOrder !== null
-  ) {
+    if (game.selectedTab === "shop") {
 
-    html =
-      renderCooking();
-
-  }
-
-  else {
-
-    if (
-      game.currentTab === "shop"
-    ) {
-
-      html = renderShop();
+        renderShop(content);
 
     }
 
-    else if (
-      game.currentTab === "warehouse"
-    ) {
+    else if (game.selectedTab === "warehouse") {
 
-      html =
-        renderWarehouse();
+        renderWarehouse(content);
 
     }
 
-    else if (
-      game.currentTab === "staff"
-    ) {
+    else if (game.selectedTab === "price") {
 
-      html =
-        renderStaff();
+        renderPrices(content);
 
     }
 
-    else if (
-      game.currentTab === "upgrade"
-    ) {
+    else if (game.selectedTab === "upgrade") {
 
-      html =
-        renderUpgrade();
+        renderUpgrades(content);
 
     }
 
-  }
+    else if (game.selectedTab === "decorate") {
 
+        renderDecorate(content);
 
-  document.getElementById(
-    "content"
-  ).innerHTML = html;
+    }
+
+    else if (game.selectedTab === "rating") {
+
+        renderRating(content);
+
+    }
+
+    else if (game.selectedTab === "book") {
+
+        renderBook(content);
+
+    }
 
 }
 
 
 /* =====================================================
-   COOKING SCREEN
+   SHOP
+===================================================== */
+
+function renderShop(content) {
+
+    let html = `
+
+        <div class="section-title">
+            🏪 ${game.shopName}
+        </div>
+
+    `;
+
+
+    if (game.closed) {
+
+        html += `
+
+            <div class="card">
+
+                <div class="card-title">
+                    🌙 Tiệm đã đóng cửa
+                </div>
+
+                <div class="card-desc">
+                    Hôm nay đã kết thúc.
+                    Nghỉ ngơi rồi mở cửa ngày mới nha!
+                </div>
+
+                <button
+                    class="open-day"
+                    onclick="nextDay()">
+
+                    🌅 Mở cửa ngày ${game.day + 1}
+
+                </button>
+
+            </div>
+
+        `;
+
+        content.innerHTML =
+            html;
+
+        return;
+
+    }
+
+
+    html += `
+
+        <div class="card">
+
+            <div class="card-title">
+                📋 Nhiệm vụ hôm nay
+            </div>
+
+            <div class="task-row">
+                Bán 10 món
+                <span class="task-progress">
+                    ${game.servedToday}/10
+                </span>
+            </div>
+
+            <div class="task-row">
+                Khách chấm 5 sao
+                <span class="task-progress">
+                    ${game.fiveStarToday}/3
+                </span>
+            </div>
+
+            <div class="task-row">
+                Giao đơn app
+                <span class="task-progress">
+                    ${game.appToday}/2
+                </span>
+            </div>
+
+        </div>
+
+    `;
+
+
+    if (game.orders.length === 0) {
+
+        html += `
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    🍜
+                </div>
+
+                Chưa có khách nào.
+                <br>
+                Đợi khách vào quán nha!
+
+            </div>
+
+        `;
+
+    }
+
+
+    game.orders.forEach(
+        (order, index) => {
+
+            html += renderOrderCard(
+                order,
+                index
+            );
+
+        }
+    );
+
+
+    html += `
+
+        <button
+            class="btn btn-yellow"
+            style="width:100%;margin-top:10px"
+            onclick="closeEarly()">
+
+            🌙 Đóng cửa sớm
+
+        </button>
+
+    `;
+
+
+    content.innerHTML =
+        html;
+
+}
+
+
+/* =====================================================
+   ORDER CARD
+===================================================== */
+
+function renderOrderCard(
+    order,
+    index
+) {
+
+    const menu =
+        MENU[order.menu];
+
+
+    const percent =
+        Math.max(
+            0,
+            Math.min(
+                100,
+                order.patience
+            )
+        );
+
+
+    const toppingText =
+        order.toppings &&
+        order.toppings.length
+
+            ? order.toppings
+                .map(
+                    key =>
+                        INGREDIENTS[key].name
+                )
+                .join(", ")
+
+            : "Không thêm topping";
+
+
+    return `
+
+        <div class="order-card">
+
+            <div class="order-top">
+
+                <div class="customer-avatar">
+                    ${order.avatar}
+                </div>
+
+                <div class="order-info">
+
+                    <div class="customer-name">
+                        ${order.name}
+                    </div>
+
+                    <div class="order-status">
+                        ${order.isApp
+                            ? "📱 Đơn App"
+                            : "🍜 Khách tại quán"}
+                    </div>
+
+                    <div class="patience">
+
+                        <div
+                            class="patience-fill"
+                            style="width:${percent}%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="order-food">
+
+                <b>
+                    ${order.quantity} phần
+                    ${menu.emoji}
+                    ${menu.name}
+                </b>
+
+                <br>
+
+                ${
+                    order.toppings &&
+                    order.toppings.length
+                        ? "Topping: " + toppingText
+                        : ""
+                }
+
+                <br>
+
+                💰
+                ${money(
+                    game.prices[order.menu]
+                    * order.quantity
+                )}đ
+
+            </div>
+
+
+            <div class="order-buttons">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="startCooking(${index})">
+
+                    🍜 Làm món
+
+                </button>
+
+
+                <button
+                    class="btn btn-blue"
+                    onclick="talkCustomer(${index})">
+
+                    💬 Nói chuyện
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   COOKING
+===================================================== */
+
+let cookingIndex = null;
+
+let cookingOrder = null;
+
+
+function startCooking(index) {
+
+    cookingIndex =
+        index;
+
+    cookingOrder =
+        JSON.parse(
+            JSON.stringify(
+                game.orders[index]
+            )
+        );
+
+
+    cookingOrder.selected = [];
+
+    cookingOrder.bowl = false;
+
+    cookingOrder.broth = false;
+
+
+    renderCooking();
+
+}
+
+
+/* =====================================================
+   RENDER COOKING
 ===================================================== */
 
 function renderCooking() {
 
-  const order =
-    game.orders[
-      game.cookingOrder
-    ];
-
-
-  if (!order) {
-
-    game.cookingOrder =
-      null;
-
-    return "";
-
-  }
-
-
-  const menu =
-    MENU[order.menu];
-
-
-  let bowlContent =
-    order.added
-      .map(
-        key =>
-        INGREDIENTS[key][1]
-      )
-      .join("");
-
-
-  if (!bowlContent) {
-
-    bowlContent = "🍜";
-
-  }
-
-
-  let html = `
-
-    <div class="card cooking">
-
-      <h2>
-        👩‍🍳 Làm ${menu.name}
-      </h2>
-
-      <p>
-        Khách:
-        <b>${order.name}</b>
-      </p>
-
-      <div class="bowl">
-
-        <div class="bowl-content">
-          ${bowlContent}
-        </div>
-
-      </div>
-
-      <p>
-        Kéo/thêm topping khách gọi:
-      </p>
-
-      <div class="toppings">
-
-  `;
-
-
-  order.toppings.forEach(
-    key => {
-
-      const used =
-        order.added.includes(
-          key
+    const content =
+        document.getElementById(
+            "content"
         );
 
 
-      html += `
+    if (!cookingOrder) {
 
-        <button
-          class="
-            topping-button
-            ${used ? "used" : ""}
-          "
-          onclick="
-            addTopping(
-              '${key}'
-            )
-          "
-        >
+        renderContent();
 
-          ${INGREDIENTS[key][1]}
-
-          <span>
-            ${INGREDIENTS[key][0]}
-          </span>
-
-        </button>
-
-      `;
+        return;
 
     }
-  );
 
 
-  html += `
-
-      </div>
-
-      <button
-        class="big-button"
-        onclick="pourBroth()"
-      >
-        💧 ĐỔ NƯỚC LÈO
-      </button>
-
-      <button
-        class="big-button"
-        ${
-          order.poured
-          ? ""
-          : "disabled"
-        }
-        onclick="finishCooking()"
-      >
-        ✨ HOÀN THÀNH MÓN
-      </button>
-
-      <button
-        class="
-          big-button
-        "
-        style="
-          background:#b74b3e;
-        "
-        onclick="
-          cancelCooking()
-        "
-      >
-        ↩️ Quay lại
-      </button>
-
-    </div>
-
-  `;
+    const menu =
+        MENU[cookingOrder.menu];
 
 
-  return html;
+    let html = `
+
+        <div class="cooking">
+
+            <div class="cooking-header">
+
+                <div class="cooking-title">
+
+                    👩🏻‍🍳 Làm món cho
+                    ${cookingOrder.name}
+
+                </div>
+
+                <div class="cooking-order">
+
+                    ${cookingOrder.quantity}
+                    phần ${menu.name}
+
+                    <br>
+
+                    ${
+                        cookingOrder.toppings &&
+                        cookingOrder.toppings.length
+                            ? "Khách yêu cầu: " +
+                              cookingOrder.toppings
+                                .map(
+                                    x =>
+                                        INGREDIENTS[x].name
+                                )
+                                .join(", ")
+                            : "Không yêu cầu topping"
+                    }
+
+                </div>
+
+            </div>
+
+
+            <div class="container-grid">
+
+                <button
+                    class="ingredient-button
+                    ${cookingOrder.bowl
+                        ? "selected"
+                        : ""}"
+                    onclick="takeBowl()">
+
+                    <div class="ingredient-emoji">
+                        🥣
+                    </div>
+
+                    <div class="ingredient-name">
+                        ${menu.name === "Lẩu mắm"
+                            ? "Nồi lẩu"
+                            : "Lấy tô"}
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="ingredient-button
+                    ${cookingOrder.broth
+                        ? "selected"
+                        : ""}"
+                    onclick="pourBroth()">
+
+                    <div class="ingredient-emoji">
+                        🍲
+                    </div>
+
+                    <div class="ingredient-name">
+                        Múc nước lèo
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="ingredient-button"
+                    onclick="showRecipe()">
+
+                    <div class="ingredient-emoji">
+                        📜
+                    </div>
+
+                    <div class="ingredient-name">
+                        Công thức
+                    </div>
+
+                </button>
+
+            </div>
+
+
+            <div class="bowl-area">
+
+                ${
+                    cookingOrder.bowl
+
+                    ?
+
+                    `<div class="bowl-image">
+
+                        ${menu.emoji}
+
+                    </div>`
+
+                    :
+
+                    `<div class="bowl-empty">
+
+                        🥣
+
+                        <br>
+
+                        Chưa có tô.
+                        <br>
+                        Chạm "Lấy tô" để lấy.
+
+                    </div>`
+                }
+
+            </div>
+
+
+            <div class="section-title"
+                 style="margin-left:4px">
+
+                🥬 Topping
+
+            </div>
+
+
+            <div class="container-grid">
+
+                ${renderToppings()}
+
+            </div>
+
+
+            <div class="cooking-actions">
+
+                <button
+                    class="btn btn-yellow"
+                    onclick="pourBroth()">
+
+                    🍲 Múc nước
+
+                </button>
+
+
+                <button
+                    class="btn btn"
+                    onclick="clearCooking()">
+
+                    🗑️ Làm lại
+
+                </button>
+
+            </div>
+
+
+            <button
+                class="deliver-button"
+                onclick="deliverDish()">
+
+                🍜 GIAO MÓN
+
+            </button>
+
+            <button
+                class="btn"
+                style="width:100%;margin-top:8px"
+                onclick="backToShop()">
+
+                ← Quay lại
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    content.innerHTML =
+        html;
 
 }
 
 
 /* =====================================================
-   START COOKING
+   TOPPING
 ===================================================== */
 
-function startCooking(index) {
+function renderToppings() {
 
-  const order =
-    game.orders[index];
+    const keys = [
 
-  order.added = [];
+        "shrimp",
+        "squid",
+        "pork",
+        "fish",
+        "eggplant",
+        "water",
+        "banana",
+        "chili",
+        "sauce"
 
-  order.poured = false;
+    ];
 
-  game.cookingOrder =
-    index;
 
-  saveGame();
+    return keys.map(key => {
 
-  render();
+        const item =
+            INGREDIENTS[key];
+
+        const selected =
+            cookingOrder.selected
+                .includes(key);
+
+
+        const stock =
+            game.stock[key] || 0;
+
+
+        return `
+
+            <button
+                class="
+                    ingredient-button
+                    ${selected ? "selected" : ""}
+                    ${stock <= 0 ? "disabled" : ""}
+                "
+                onclick="
+                    addTopping('${key}')
+                "
+                ${stock <= 0 ? "disabled" : ""}>
+
+                <div class="ingredient-emoji">
+
+                    ${item.emoji}
+
+                </div>
+
+                <div class="ingredient-name">
+
+                    ${item.name}
+
+                    <br>
+
+                    ${stock}
+
+                </div>
+
+            </button>
+
+        `;
+
+    }).join("");
+
+}
+
+
+/* =====================================================
+   TAKE BOWL
+===================================================== */
+
+function takeBowl() {
+
+    cookingOrder.bowl =
+        true;
+
+    sound("click");
+
+    renderCooking();
 
 }
 
@@ -1609,30 +1610,38 @@ function startCooking(index) {
 
 function addTopping(key) {
 
-  const order =
-    game.orders[
-      game.cookingOrder
-    ];
+    if (!cookingOrder) return;
 
 
-  if (
-    order.added.includes(
-      key
-    )
-  ) {
-
-    return;
-
-  }
+    const stock =
+        game.stock[key] || 0;
 
 
-  order.added.push(key);
+    if (stock <= 0) {
 
-  sound();
+        toast(
+            "❌ Nguyên liệu đã hết!"
+        );
 
-  saveGame();
+        return;
 
-  render();
+    }
+
+
+    if (
+        !cookingOrder.selected
+            .includes(key)
+    ) {
+
+        cookingOrder.selected.push(
+            key
+        );
+
+        sound("click");
+
+        renderCooking();
+
+    }
 
 }
 
@@ -1643,448 +1652,466 @@ function addTopping(key) {
 
 function pourBroth() {
 
-  const order =
-    game.orders[
-      game.cookingOrder
-    ];
+    if (!cookingOrder.bowl) {
+
+        toast(
+            "🥣 Lấy tô trước nha!"
+        );
+
+        return;
+
+    }
 
 
-  order.poured = true;
+    cookingOrder.broth =
+        true;
 
-  sound("pour");
+    sound("pour");
 
-  saveGame();
-
-  render();
-
-  toast(
-    "💧 Đã đổ nước lèo!"
-  );
+    renderCooking();
 
 }
 
 
 /* =====================================================
-   FINISH COOKING
+   CLEAR COOKING
 ===================================================== */
 
-function finishCooking() {
+function clearCooking() {
 
-  const index =
-    game.cookingOrder;
+    if (!cookingOrder) return;
 
-  const order =
-    game.orders[index];
+    cookingOrder.selected = [];
+
+    cookingOrder.bowl = false;
+
+    cookingOrder.broth = false;
+
+    renderCooking();
+
+}
 
 
-  if (!order.poured) {
+/* =====================================================
+   RECIPE
+===================================================== */
 
-    return;
+function showRecipe() {
 
-  }
+    const menu =
+        MENU[cookingOrder.menu];
 
 
-  const missing =
-    order.toppings.filter(
-      key =>
-      !order.added.includes(
-        key
-      )
+    showModal(`
+
+        <div class="modal-title">
+            📜 Công thức
+        </div>
+
+        <p>
+            <b>${menu.name}</b>
+        </p>
+
+        <p>
+            ${menu.ingredients
+                .map(
+                    key =>
+                        INGREDIENTS[key].emoji
+                        + " "
+                        + INGREDIENTS[key].name
+                )
+                .join("<br>")}
+        </p>
+
+        <button
+            class="btn btn-primary"
+            style="width:100%"
+            onclick="closeModal()">
+
+            Đóng
+
+        </button>
+
+    `);
+
+}
+
+
+/* =====================================================
+   DELIVER DISH
+===================================================== */
+
+function deliverDish() {
+
+    if (!cookingOrder) return;
+
+
+    /* ---- kiểm tra tô ---- */
+
+    if (!cookingOrder.bowl) {
+
+        toast(
+            "❌ Chưa lấy tô!"
+        );
+
+        return;
+
+    }
+
+
+    /* ---- kiểm tra nước ---- */
+
+    if (!cookingOrder.broth) {
+
+        toast(
+            "❌ Chưa múc nước lèo!"
+        );
+
+        return;
+
+    }
+
+
+    const menu =
+        MENU[cookingOrder.menu];
+
+
+    /* ---- nhân viên múc nước làm sai ---- */
+
+    if (
+        game.staff.broth &&
+        Math.random() < .12
+    ) {
+
+        showModal(`
+
+            <div class="modal-title">
+                😭 Út Múc Lèo làm đổ nước!
+            </div>
+
+            <p>
+                Một phần vừa bị đổ mất.
+                Làm lại món này nha!
+            </p>
+
+            <div class="modal-actions">
+
+                <button
+                    class="btn"
+                    onclick="closeModal()">
+
+                    Bỏ qua
+
+                </button>
+
+                <button
+                    class="btn btn-primary"
+                    onclick="
+                        closeModal();
+                        renderCooking();
+                    ">
+
+                    Làm lại
+
+                </button>
+
+            </div>
+
+        `);
+
+        return;
+
+    }
+
+
+    /* ---- nhân viên quên topping ---- */
+
+    const missing =
+        (cookingOrder.toppings || [])
+            .filter(
+                key =>
+                    !cookingOrder.selected
+                        .includes(key)
+            );
+
+
+    if (
+        missing.length &&
+        game.staff.topping &&
+        Math.random() < .45
+    ) {
+
+        showModal(`
+
+            <div class="modal-title">
+                😭 Quên topping!
+            </div>
+
+            <p>
+                Bảy Topping quên:
+            </p>
+
+            <p style="
+                color:#ff6259;
+                font-weight:900;
+            ">
+
+                ${missing
+                    .map(
+                        x =>
+                            INGREDIENTS[x].name
+                    )
+                    .join(", ")}
+
+            </p>
+
+
+            <button
+                class="btn btn-primary"
+                style="width:100%"
+                onclick="fixMissingTopping()">
+
+                ➕ Thêm topping
+
+            </button>
+
+        `);
+
+        return;
+
+    }
+
+
+    /* =================================================
+       LƯU THÔNG TIN TRƯỚC KHI XÓA
+    ================================================= */
+
+    const quantity =
+        cookingOrder.quantity || 1;
+
+
+    const price =
+        game.prices[cookingOrder.menu]
+        || menu.basePrice;
+
+
+    const earned =
+        price * quantity;
+
+
+    /* =================================================
+       TRỪ NGUYÊN LIỆU
+    ================================================= */
+
+    consumeIngredients(
+        cookingOrder
     );
 
 
-  /*
-    Nhân viên topping có thể
-    bỏ thiếu
-  */
+    /* =================================================
+       TIỀN
+    ================================================= */
 
-  if (
-    game.staff.includes(
-      "topping"
-    ) &&
-    missing.length > 0 &&
-    Math.random() < 0.65
-  ) {
+    game.money +=
+        earned;
 
-    order.missing =
-      missing;
 
-    game.cookingOrder =
-      null;
+    game.servedToday +=
+        quantity;
+
+
+    game.tasks.sold +=
+        quantity;
+
+
+    if (cookingOrder.isApp) {
+
+        game.appToday++;
+
+        game.tasks.app++;
+
+    }
+
+
+    /* =================================================
+       ĐÁNH GIÁ
+    ================================================= */
+
+    let stars;
+
+
+    const random =
+        Math.random();
+
+
+    if (random < .1) {
+
+        stars = 3;
+
+    }
+
+    else if (random < .4) {
+
+        stars = 4;
+
+    }
+
+    else {
+
+        stars = 5;
+
+    }
+
+
+    addReview(
+        stars
+    );
+
+
+    if (stars === 5) {
+
+        game.fiveStarToday++;
+
+        game.tasks.fiveStar++;
+
+    }
+
+
+    /* =================================================
+       XÓA ĐƠN
+    ================================================= */
+
+    game.orders.splice(
+        cookingIndex,
+        1
+    );
+
+
+    /* =================================================
+       RESET
+    ================================================= */
+
+    cookingOrder =
+        null;
+
+    cookingIndex =
+        null;
+
+
+    sound("bell");
+
+
+    toast(
+        `💰 +${money(earned)}đ · ⭐ ${stars} sao`
+    );
+
 
     saveGame();
 
     render();
 
-
-    openModal(`
-
-      <h2>
-        ⚠️ Nhân viên báo lỗi
-      </h2>
-
-      <p>
-        Bảy Topping bỏ thiếu:
-      </p>
-
-      <b>
-        ${
-          missing
-            .map(
-              x =>
-              INGREDIENTS[x][0]
-            )
-            .join(", ")
-        }
-      </b>
-
-      <br><br>
-
-      <button
-        class="btn"
-        onclick="
-          fixMissing(${index})
-        "
-      >
-        🛠️ Bổ sung topping
-      </button>
-
-      <button
-        class="btn btn-danger"
-        onclick="
-          customerLeaves(${index})
-        "
-      >
-        Bỏ món
-
-      </button>
-
-    `);
-
-    return;
-
-  }
+}
 
 
-  /*
-    Nhân viên múc nước lèo
-    có thể làm đổ
-  */
+/* =====================================================
+   CONSUME INGREDIENTS
+   QUAN TRỌNG:
+   MỖI NGUYÊN LIỆU CHỈ TRỪ 1 LẦN
+===================================================== */
 
-  if (
-    game.staff.includes(
-      "broth"
-    ) &&
-    Math.random() < 0.2
-  ) {
+function consumeIngredients(order) {
 
-    game.cookingOrder =
-      null;
-
-    saveGame();
-
-    render();
+    const menu =
+        MENU[order.menu];
 
 
-    openModal(`
-
-      <h2>
-        💦 Ôi không!
-      </h2>
-
-      <p>
-        Út Múc Lèo làm đổ
-        một phần nước lèo.
-      </p>
-
-      <button
-        class="btn"
-        onclick="
-          redoBroth(${index})
-        "
-      >
-        🍲 Làm lại
-      </button>
-
-      <button
-        class="btn btn-danger"
-        onclick="
-          customerLeaves(${index})
-        "
-      >
-        Bỏ món
-      </button>
-
-    `);
-
-    return;
-
-  }
+    if (!menu) return;
 
 
-  order.ready = true;
-
-  order.total =
-    game.prices[
-      order.menu
-    ] ||
-    MENU[
-      order.menu
-    ].price;
+    const quantity =
+        order.quantity || 1;
 
 
-  game.cookingOrder =
-    null;
+    menu.ingredients
+        .forEach(key => {
 
-  saveGame();
+            game.stock[key] =
+                Math.max(
+                    0,
+                    (game.stock[key] || 0)
+                    - quantity
+                );
 
-  render();
+        });
 
 
-  openModal(`
+    /*
+       Topping khách chọn thêm
+       chỉ trừ nếu topping đó
+       KHÔNG nằm trong nguyên liệu
+       mặc định của món.
+    */
 
-    <h2>
-      🍜 Món đã xong!
-    </h2>
+    (order.selected || [])
+        .forEach(key => {
 
-    <p>
-      ${MENU[order.menu].emoji}
-      ${MENU[order.menu].name}
-    </p>
+            if (
+                !menu.ingredients
+                    .includes(key)
+            ) {
 
-    <button
-      class="btn"
-      onclick="
-        deliverOrder(${index})
-      "
-    >
-      🧑‍🌾 Giao món &
-      thu tiền
-    </button>
+                game.stock[key] =
+                    Math.max(
+                        0,
+                        (game.stock[key] || 0)
+                        - quantity
+                    );
 
-  `);
+            }
+
+        });
 
 }
 
 
 /* =====================================================
-   FIX MISSING
+   FIX TOPPING
 ===================================================== */
 
-function fixMissing(index) {
-
-  const order =
-    game.orders[index];
-
-
-  order.added =
-    [
-      ...order.toppings
-    ];
-
-  order.missing = [];
-
-  order.ready = true;
-
-  order.total =
-    game.prices[
-      order.menu
-    ] ||
-    MENU[
-      order.menu
-    ].price;
-
-
-  closeModal();
-
-  saveGame();
-
-  render();
-
-
-  openModal(`
-
-    <h2>
-      ✨ Đã sửa xong!
-    </h2>
-
-    <button
-      class="btn"
-      onclick="
-        deliverOrder(${index})
-      "
-    >
-      Giao món & thu tiền
-    </button>
-
-  `);
-
-}
-
-
-/* =====================================================
-   REDO BROTH
-===================================================== */
-
-function redoBroth(index) {
-
-  const order =
-    game.orders[index];
-
-  order.poured = true;
-
-  closeModal();
-
-  saveGame();
-
-  render();
-
-
-  toast(
-    "🍲 Đã làm lại nước lèo!"
-  );
-
-}
-
-
-/* =====================================================
-   CANCEL COOKING
-===================================================== */
-
-function cancelCooking() {
-
-  game.cookingOrder =
-    null;
-
-  saveGame();
-
-  render();
-
-}
-
-
-/* =====================================================
-   DELIVER ORDER
-===================================================== */
-
-function deliverOrder(index) {
-
-  const order =
-    game.orders[index];
-
-
-  if (!order) {
+function fixMissingTopping() {
 
     closeModal();
 
-    return;
+    missingToppingMode = true;
 
-  }
+    renderCooking();
 
-
-  const price =
-    game.prices[
-      order.menu
-    ] ||
-    MENU[
-      order.menu
-    ].price;
+}
 
 
-  /*
-    Thu ngân giúp tránh khách
-    đưa thiếu
-  */
-
-  let paid = price;
+let missingToppingMode =
+    false;
 
 
-  if (
-    !game.staff.includes(
-      "cashier"
-    ) &&
-    !game.upgrades.includes(
-      "pos"
-    ) &&
-    Math.random() < 0.15
-  ) {
+/* =====================================================
+   BACK SHOP
+===================================================== */
 
-    paid =
-      Math.round(
-        price * 0.8
-      );
+function backToShop() {
 
-  }
+    cookingOrder =
+        null;
 
+    cookingIndex =
+        null;
 
-  if (
-    paid < price
-  ) {
+    missingToppingMode =
+        false;
 
-    openModal(`
+    game.selectedTab =
+        "shop";
 
-      <h2>
-        💵 Khách đưa thiếu!
-      </h2>
-
-      <p>
-        Hóa đơn:
-        <b>
-          ${money(price)}
-        </b>
-      </p>
-
-      <p>
-        Khách đưa:
-        <b>
-          ${money(paid)}
-        </b>
-      </p>
-
-      <button
-        class="btn"
-        onclick="
-          deliverOrder(
-            ${index}
-          )
-        "
-      >
-        Nhắc khách trả đủ
-      </button>
-
-    `);
-
-    return;
-
-  }
-
-
-  game.money += price;
-
-
-  addReview(
-    4 + Math.random()
-  );
-
-
-  game.orders.splice(
-    index,
-    1
-  );
-
-
-  closeModal();
-
-  saveGame();
-
-  render();
-
-  sound("bell");
-
-
-  toast(
-    "💰 Khách thanh toán!"
-  );
+    render();
 
 }
 
@@ -2095,134 +2122,295 @@ function deliverOrder(index) {
 
 function talkCustomer(index) {
 
-  const answers = [
+    const responses = [
 
-    "Dạ em xin lỗi mình, em làm liền ạ 💚",
+        {
+            text:
+                "Dạ chị đợi em một chút nha ❤️",
+            add:
+                15
+        },
 
-    "Mình chờ em chút nha, món sắp xong rồi ạ!",
+        {
+            text:
+                "Món đang làm rồi ạ!",
+            add:
+                10
+        },
 
-    "Dạ cảm ơn mình đã thông cảm cho quán 🌴",
+        {
+            text:
+                "Dạ em cảm ơn chị đã chờ nha!",
+            add:
+                7
+        },
 
-    "Ủa mình chờ lâu vậy hả? 😥"
+        {
+            text:
+                "Chờ xíu đi ạ 😅",
+            add:
+                -8
+        }
 
-  ];
+    ];
 
 
-  openModal(`
+    showModal(`
 
-    <h2>
-      💬 Khách
-      ${game.orders[index].name}
-    </h2>
+        <div class="modal-title">
+            💬 Nói chuyện với khách
+        </div>
 
-    <p>
-      “Món lâu quá rồi đó em…”
-    </p>
+        ${responses.map(
+            (item, i) => `
 
-    ${answers.map(
-      (answer, i) => `
+                <button
+                    class="btn"
+                    style="
+                        width:100%;
+                        margin:4px 0;
+                        text-align:left;
+                    "
+                    onclick="
+                        answerCustomer(
+                            ${index},
+                            ${i}
+                        )
+                    ">
 
-        <button
-          style="
-            width:100%;
-            margin:5px 0;
-            text-align:left;
-          "
-          class="btn btn-secondary"
-          onclick="
-            answerCustomer(
-              ${index},
-              ${i}
-            )
-          "
-        >
-          ${answer}
-        </button>
+                    ${item.text}
 
-      `
-    ).join("")}
+                </button>
 
-  `);
+            `
+        ).join("")}
+
+    `);
 
 }
 
 
 function answerCustomer(
-  index,
-  answer
+    index,
+    responseIndex
 ) {
 
-  const order =
-    game.orders[index];
+    const responses = [
+
+        {
+            text:
+                "Dạ chị đợi em một chút nha ❤️",
+            add:
+                15
+        },
+
+        {
+            text:
+                "Món đang làm rồi ạ!",
+            add:
+                10
+        },
+
+        {
+            text:
+                "Dạ em cảm ơn chị đã chờ nha!",
+            add:
+                7
+        },
+
+        {
+            text:
+                "Chờ xíu đi ạ 😅",
+            add:
+                -8
+        }
+
+    ];
 
 
-  const increase = [
-    15,
-    10,
-    7,
-    -8
-  ];
+    const order =
+        game.orders[index];
 
 
-  order.patience =
-    Math.min(
-      100,
-      order.patience +
-      increase[answer]
-    );
+    order.patience =
+        Math.min(
+            100,
+            order.patience
+            + responses[responseIndex].add
+        );
 
 
-  if (
-    answer < 3
-  ) {
+    if (
+        responses[responseIndex].add < 0
+    ) {
+
+        addReview(3);
+
+    }
+
+
+    closeModal();
 
     toast(
-      "💚 Khách thấy bạn lịch sự!"
+        responses[responseIndex].text
     );
 
-  }
 
+    saveGame();
 
-  closeModal();
-
-  saveGame();
-
-  render();
+    render();
 
 }
 
 
 /* =====================================================
-   ADD REVIEW
+   REVIEW
 ===================================================== */
 
 function addReview(stars) {
 
-  stars =
-    Math.max(
-      1,
-      Math.min(
-        5,
-        Math.round(stars)
-      )
-    );
+    const total =
+        game.rating *
+        game.reviews;
 
 
-  game.reviews.push(
-    stars
-  );
+    game.reviews++;
 
 
-  const total =
-    game.reviews.reduce(
-      (a, b) => a + b,
-      0
-    );
+    game.rating =
+        (
+            total + stars
+        ) /
+        game.reviews;
 
 
-  game.rating =
-    total /
-    game.reviews.length;
+    game.rating =
+        Math.max(
+            1,
+            Math.min(
+                5,
+                game.rating
+            )
+        );
+
+}
+
+
+/* =====================================================
+   WAREHOUSE
+===================================================== */
+
+function renderWarehouse(content) {
+
+    let html = `
+
+        <div class="section-title">
+            🧺 Kho nguyên liệu
+        </div>
+
+        <div class="card">
+
+            <div class="card-title">
+                🛒 Nhập hàng
+            </div>
+
+            <div class="card-desc">
+                Nguyên liệu tươi sẽ xuống chất lượng
+                sau mỗi ngày nếu không có tủ đông.
+            </div>
+
+            <button
+                class="btn btn-green"
+                style="width:100%;margin-top:12px"
+                onclick="buyFullStock()">
+
+                🛒 Nhập đủ hàng hôm nay
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    Object.keys(INGREDIENTS)
+        .forEach(key => {
+
+            const item =
+                INGREDIENTS[key];
+
+            const count =
+                game.stock[key] || 0;
+
+
+            html += `
+
+                <div class="card">
+
+                    <div class="stock-row">
+
+                        <div class="stock-icon">
+                            ${item.emoji}
+                        </div>
+
+                        <div class="stock-info">
+
+                            <div class="stock-name">
+
+                                ${item.name}
+
+                            </div>
+
+                            <div class="
+                                stock-count
+                                ${count <= 2
+                                    ? "stock-low"
+                                    : ""}
+                            ">
+
+                                Còn ${count}
+
+                                ${
+                                    item.fresh
+                                        ? " · Tươi"
+                                        : ""
+                                }
+
+                            </div>
+
+                            <div class="stock-count">
+
+                                ${money(item.price)}
+                                đ / phần
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="buy-btn"
+                            onclick="
+                                buyIngredient(
+                                    '${key}'
+                                )
+                            ">
+
+                            +5
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+    content.innerHTML =
+        html;
 
 }
 
@@ -2231,47 +2419,51 @@ function addReview(stars) {
    BUY INGREDIENT
 ===================================================== */
 
-function buyIngredient(
-  key,
-  amount
-) {
+function buyIngredient(key) {
 
-  const ingredient =
-    INGREDIENTS[key];
+    const item =
+        INGREDIENTS[key];
 
 
-  const cost =
-    ingredient[2] *
-    amount;
+    const quantity =
+        5;
 
 
-  if (
-    game.money < cost
-  ) {
+    const cost =
+        item.price *
+        quantity;
+
+
+    if (
+        game.money < cost
+    ) {
+
+        toast(
+            "❌ Không đủ tiền!"
+        );
+
+        return;
+
+    }
+
+
+    game.money -=
+        cost;
+
+
+    game.stock[key] =
+        (game.stock[key] || 0)
+        + quantity;
+
 
     toast(
-      "❌ Không đủ tiền!"
+        `🛒 Đã mua ${quantity} ${item.name}`
     );
 
-    return;
 
-  }
+    saveGame();
 
-
-  game.money -= cost;
-
-
-  game.stock[key] =
-    (
-      game.stock[key] || 0
-    ) + amount;
-
-
-  saveGame();
-
-  render();
-
-  sound();
+    render();
 
 }
 
@@ -2282,66 +2474,203 @@ function buyIngredient(
 
 function buyFullStock() {
 
-  let total = 0;
+    let total =
+        0;
 
 
-  Object.entries(
-    INGREDIENTS
-  ).forEach(
-    ([key, item]) => {
+    Object.keys(INGREDIENTS)
+        .forEach(key => {
 
-      const amount =
-        item[3]
-        ? 6
-        : 10;
+            const item =
+                INGREDIENTS[key];
 
 
-      total +=
-        item[2] *
-        amount;
+            const target =
+                item.fresh
+                    ? 10
+                    : 20;
+
+
+            const missing =
+                Math.max(
+                    0,
+                    target -
+                    (game.stock[key] || 0)
+                );
+
+
+            total +=
+                missing *
+                item.price;
+
+        });
+
+
+    if (
+        game.money < total
+    ) {
+
+        toast(
+            "❌ Không đủ tiền nhập hàng!"
+        );
+
+        return;
 
     }
-  );
 
 
-  if (
-    game.money < total
-  ) {
+    Object.keys(INGREDIENTS)
+        .forEach(key => {
+
+            const target =
+                INGREDIENTS[key].fresh
+                    ? 10
+                    : 20;
+
+
+            game.stock[key] =
+                Math.max(
+                    game.stock[key] || 0,
+                    target
+                );
+
+        });
+
+
+    game.money -=
+        total;
+
 
     toast(
-      "❌ Không đủ tiền nhập hàng!"
+        `🛒 Nhập hàng -${money(total)}đ`
     );
 
-    return;
 
-  }
+    saveGame();
 
+    render();
 
-  game.money -=
-    total;
-
-
-  Object.entries(
-    INGREDIENTS
-  ).forEach(
-    ([key, item]) => {
-
-      game.stock[key] +=
-        item[3]
-        ? 6
-        : 10;
-
-    }
-  );
+}
 
 
-  saveGame();
+/* =====================================================
+   PRICE
+===================================================== */
 
-  render();
+function renderPrices(content) {
 
-  toast(
-    "📦 Đã nhập đủ hàng!"
-  );
+    let html = `
+
+        <div class="section-title">
+            🏷️ Giá bán
+        </div>
+
+        <div class="card">
+
+            <div class="card-title">
+                💡 Mẹo bán hàng
+            </div>
+
+            <div class="card-desc">
+
+                Giá càng cao thì lợi nhuận càng nhiều,
+                nhưng khách sẽ ít chọn hơn.
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    Object.keys(MENU)
+        .forEach(key => {
+
+            const item =
+                MENU[key];
+
+
+            const price =
+                game.prices[key];
+
+
+            html += `
+
+                <div class="card">
+
+                    <div class="price-row">
+
+                        <div class="price-name">
+
+                            <div class="food-icon">
+                                ${item.emoji}
+                            </div>
+
+                            <div>
+
+                                <b>
+                                    ${item.name}
+                                </b>
+
+                                <div class="stock-count">
+
+                                    Giá vốn:
+                                    ${money(item.cost)}đ
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="price-controls">
+
+                            <button
+                                onclick="
+                                    changePrice(
+                                        '${key}',
+                                        -1000
+                                    )
+                                ">
+
+                                −
+
+                            </button>
+
+
+                            <div class="price-number">
+
+                                ${money(price / 1000)}k
+
+                            </div>
+
+
+                            <button
+                                onclick="
+                                    changePrice(
+                                        '${key}',
+                                        1000
+                                    )
+                                ">
+
+                                +
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+    content.innerHTML =
+        html;
 
 }
 
@@ -2351,67 +2680,170 @@ function buyFullStock() {
 ===================================================== */
 
 function changePrice(
-  key,
-  value
+    key,
+    amount
 ) {
 
-  if (!game.prices) {
-
-    game.prices = {};
-
-  }
-
-
-  game.prices[key] =
-    Math.max(
-      1000,
-      Number(value)
-    );
+    game.prices[key] =
+        Math.max(
+            MENU[key].cost + 1000,
+            game.prices[key] + amount
+        );
 
 
-  saveGame();
+    saveGame();
 
-  toast(
-    "💰 Đã cập nhật giá!"
-  );
+    render();
 
 }
 
 
 /* =====================================================
-   HIRE STAFF
+   PRICE SATISFACTION
 ===================================================== */
 
-function hireStaff(id) {
+function priceChance(menuKey) {
 
-  if (
-    game.money < 3000000
-  ) {
+    const price =
+        game.prices[menuKey];
 
-    toast(
-      "❌ Không đủ tiền thuê!"
+
+    const base =
+        MENU[menuKey].basePrice;
+
+
+    const ratio =
+        price / base;
+
+
+    if (ratio <= 1) {
+
+        return 1;
+
+    }
+
+
+    if (ratio <= 1.15) {
+
+        return .9;
+
+    }
+
+
+    if (ratio <= 1.3) {
+
+        return .75;
+
+    }
+
+
+    if (ratio <= 1.5) {
+
+        return .55;
+
+    }
+
+
+    return .35;
+
+}
+
+
+/* =====================================================
+   UPGRADE
+===================================================== */
+
+function renderUpgrades(content) {
+
+    let html = `
+
+        <div class="section-title">
+            ⬆️ Nâng cấp tiệm
+        </div>
+
+    `;
+
+
+    UPGRADES.forEach(
+        (upgrade, index) => {
+
+            const bought =
+                game.upgrades
+                    .includes(
+                        upgrade.id
+                    );
+
+
+            html += `
+
+                <div class="upgrade-card">
+
+                    <div class="upgrade-icon">
+                        ${upgrade.emoji}
+                    </div>
+
+                    <div class="upgrade-info">
+
+                        <div class="upgrade-name">
+                            ${upgrade.name}
+                        </div>
+
+                        <div class="upgrade-desc">
+                            ${upgrade.desc}
+                        </div>
+
+                        <div class="upgrade-price">
+
+                            ${
+                                bought
+                                    ? "✅ Đã mua"
+                                    : money(
+                                        upgrade.price
+                                      ) + "đ"
+                            }
+
+                        </div>
+
+                    </div>
+
+
+                    ${
+                        bought
+
+                        ?
+
+                        `<button
+                            class="btn btn-green">
+
+                            ✓
+
+                        </button>`
+
+                        :
+
+                        `<button
+                            class="btn btn-primary"
+                            onclick="
+                                buyUpgrade(
+                                    '${upgrade.id}'
+                                )
+                            ">
+
+                            Mua
+
+                        </button>`
+                    }
+
+                </div>
+
+            `;
+
+        }
     );
 
-    return;
 
-  }
-
-
-  game.money -=
-    3000000;
-
-
-  game.staff.push(id);
-
-
-  saveGame();
-
-  render();
-
-
-  toast(
-    "👩‍🍳 Đã thuê nhân viên!"
-  );
+    content.innerHTML =
+        html;
 
 }
 
@@ -2422,63 +2854,449 @@ function hireStaff(id) {
 
 function buyUpgrade(id) {
 
-  const index =
-    UPGRADES.findIndex(
-      x => x.id === id
+    const upgrade =
+        UPGRADES.find(
+            x =>
+                x.id === id
+        );
+
+
+    if (!upgrade) return;
+
+
+    if (
+        game.upgrades
+            .includes(id)
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        game.money <
+        upgrade.price
+    ) {
+
+        toast(
+            "❌ Chưa đủ tiền!"
+        );
+
+        return;
+
+    }
+
+
+    game.money -=
+        upgrade.price;
+
+
+    game.upgrades.push(
+        id
     );
 
-
-  const upgrade =
-    UPGRADES[index];
-
-
-  if (
-    index > 0 &&
-    !game.upgrades.includes(
-      UPGRADES[index - 1].id
-    )
-  ) {
 
     toast(
-      "🔒 Hãy mua nâng cấp trước!"
+        `⬆️ Đã nâng cấp: ${upgrade.name}`
     );
 
-    return;
 
-  }
+    saveGame();
+
+    render();
+
+}
 
 
-  if (
-    game.money <
-    upgrade.price
-  ) {
+/* =====================================================
+   DECORATE
+===================================================== */
+
+function renderDecorate(content) {
+
+    content.innerHTML = `
+
+        <div class="section-title">
+            🌸 Trang trí
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                🌴 Phong cách miền Tây
+            </div>
+
+            <div class="card-desc">
+
+                Quán hiện tại đã có cây dừa,
+                mái hiên, đèn lồng và bảng hiệu.
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div style="
+                font-size:55px;
+                text-align:center;
+                padding:20px;
+            ">
+
+                🌴 🏮 🥥 🌿 🛖
+
+            </div>
+
+            <button
+                class="btn btn-green"
+                style="width:100%"
+                onclick="
+                    toast('🌴 Đã trang trí quán!')
+                ">
+
+                ✨ Trang trí
+
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   RATING
+===================================================== */
+
+function renderRating(content) {
+
+    content.innerHTML = `
+
+        <div class="section-title">
+            ⭐ Đánh giá khách hàng
+        </div>
+
+
+        <div class="card"
+             style="text-align:center">
+
+            <div style="
+                font-size:42px;
+                color:#ffd23f;
+            ">
+
+                ${starsHTML()}
+
+            </div>
+
+            <div style="
+                font-size:30px;
+                font-weight:900;
+                margin-top:8px;
+            ">
+
+                ${game.rating
+                    .toFixed(1)
+                    .replace(".", ",")}
+
+            </div>
+
+            <div class="card-desc">
+
+                ${game.reviews}
+                lượt đánh giá
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                💡 Chất lượng quán
+            </div>
+
+            <div class="card-desc">
+
+                ${
+                    game.rating >= 4.5
+
+                        ? "Khách rất yêu thích quán! ❤️"
+
+                        : game.rating >= 4
+
+                        ? "Quán đang hoạt động khá tốt."
+
+                        : "Khách đang không hài lòng. Hãy phục vụ tốt hơn!"
+                }
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   BOOK
+===================================================== */
+
+function renderBook(content) {
+
+    content.innerHTML = `
+
+        <div class="section-title">
+            📒 Sổ sách
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                💰 Tài chính
+            </div>
+
+            <div class="task-row">
+
+                Vốn hiện tại
+
+                <span class="task-progress">
+
+                    ${money(game.money)}đ
+
+                </span>
+
+            </div>
+
+
+            <div class="task-row">
+
+                Món đã bán
+
+                <span class="task-progress">
+
+                    ${game.tasks.sold}
+
+                </span>
+
+            </div>
+
+
+            <div class="task-row">
+
+                Đơn app
+
+                <span class="task-progress">
+
+                    ${game.tasks.app}
+
+                </span>
+
+            </div>
+
+
+            <div class="task-row">
+
+                5 sao
+
+                <span class="task-progress">
+
+                    ${game.tasks.fiveStar}
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                🏆 Cấp độ quán
+            </div>
+
+            <div class="card-desc">
+
+                Cấp ${Math.max(
+                    1,
+                    Math.floor(
+                        game.xp / 100
+                    ) + 1
+                )}
+
+                · ${game.xp} XP
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   STAFF
+===================================================== */
+
+function renderStaff(content) {
+
+    let html = `
+
+        <div class="section-title">
+            👩🏻‍🍳 Nhân viên
+        </div>
+
+    `;
+
+
+    Object.keys(STAFF)
+        .forEach(key => {
+
+            const staff =
+                STAFF[key];
+
+
+            const hired =
+                game.staff[key];
+
+
+            html += `
+
+                <div class="staff-card">
+
+                    <div class="staff-avatar">
+                        ${staff.emoji}
+                    </div>
+
+                    <div class="staff-info">
+
+                        <div class="staff-name">
+
+                            ${staff.name}
+
+                        </div>
+
+                        <div class="staff-job">
+
+                            ${staff.job}
+
+                        </div>
+
+                    </div>
+
+
+                    ${
+                        hired
+
+                        ?
+
+                        `<button
+                            class="btn btn-green">
+
+                            ✓ Đang làm
+
+                        </button>`
+
+                        :
+
+                        `<button
+                            class="btn btn-primary"
+                            onclick="
+                                hireStaff('${key}')
+                            ">
+
+                            ${money(
+                                staff.price
+                            )}đ
+
+                        </button>`
+                    }
+
+                </div>
+
+            `;
+
+        });
+
+
+    content.innerHTML =
+        html;
+
+}
+
+
+/* =====================================================
+   HIRE STAFF
+===================================================== */
+
+function hireStaff(key) {
+
+    const staff =
+        STAFF[key];
+
+
+    if (
+        game.staff[key]
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        game.money <
+        staff.price
+    ) {
+
+        toast(
+            "❌ Không đủ tiền thuê!"
+        );
+
+        return;
+
+    }
+
+
+    game.money -=
+        staff.price;
+
+
+    game.staff[key] =
+        true;
+
 
     toast(
-      "❌ Chưa đủ tiền!"
+        `👩🏻‍🍳 Đã thuê ${staff.name}`
     );
 
-    return;
 
-  }
+    saveGame();
 
+    render();
 
-  game.money -=
-    upgrade.price;
-
-
-  game.upgrades.push(
-    upgrade.id
-  );
+}
 
 
-  saveGame();
+/* =====================================================
+   FIX CUSTOMER TOPPING
+===================================================== */
 
-  render();
+function fixCustomerOrder(index) {
 
+    const order =
+        game.orders[index];
 
-  toast(
-    "🎉 Nâng cấp thành công!"
-  );
+    if (!order) return;
 
 }
 
@@ -2489,18 +3307,32 @@ function buyUpgrade(id) {
 
 function closeEarly() {
 
-  game.closed =
-    true;
+    if (game.closed) return;
 
-  game.orders = [];
 
-  saveGame();
+    if (
+        !confirm(
+            "Đóng cửa sớm hôm nay?"
+        )
+    ) {
 
-  render();
+        return;
 
-  toast(
-    "🌙 Quán đã đóng cửa!"
-  );
+    }
+
+
+    game.closed =
+        true;
+
+
+    toast(
+        "🌙 Quán đã đóng cửa!"
+    );
+
+
+    saveGame();
+
+    render();
 
 }
 
@@ -2511,49 +3343,80 @@ function closeEarly() {
 
 function nextDay() {
 
-  game.day++;
+    game.day++;
 
-  game.hour = 7;
+    game.hour =
+        7;
 
-  game.minute = 0;
+    game.minute =
+        0;
 
-  game.closed = false;
+    game.closed =
+        false;
 
-  game.orders = [];
+    game.orders =
+        [];
+
+    game.servedToday =
+        0;
+
+    game.appToday =
+        0;
+
+    game.fiveStarToday =
+        0;
 
 
-  /*
-    Đồ tươi hết hạn
-  */
+    /*
+       Nếu không có tủ đông:
+       thực phẩm tươi hết sau ngày.
+    */
 
-  Object.entries(
-    INGREDIENTS
-  ).forEach(
-    ([key, item]) => {
+    if (
+        !game.upgrades
+            .includes("freezer")
+    ) {
 
-      if (
-        item[3] &&
-        !game.upgrades.includes(
-          "freezer"
-        )
-      ) {
+        Object.keys(
+            INGREDIENTS
+        ).forEach(key => {
 
-        game.stock[key] = 0;
+            if (
+                INGREDIENTS[key].fresh
+            ) {
 
-      }
+                game.stock[key] =
+                    0;
+
+            }
+
+        });
 
     }
-  );
 
 
-  saveGame();
+    saveGame();
 
-  render();
+    render();
+
+}
 
 
-  toast(
-    "🌅 Ngày mới bắt đầu!"
-  );
+/* =====================================================
+   PAUSE
+===================================================== */
+
+function pauseGame() {
+
+    game.paused =
+        !game.paused;
+
+
+    toast(
+        game.paused
+            ? "⏸ Đã tạm dừng"
+            : "▶️ Tiếp tục"
+    );
 
 }
 
@@ -2564,515 +3427,713 @@ function nextDay() {
 
 function openSettings() {
 
-  openModal(`
+    showModal(`
 
-    <h2>
-      ⚙️ Cài đặt
-    </h2>
+        <div class="modal-title">
+            ⚙️ Cài đặt
+        </div>
 
-    <div class="card">
-
-      <div class="row">
-
-        <b>
-          🔇 Im lặng
-        </b>
 
         <button
-          class="btn btn-secondary"
-          onclick="
-            toggleMute()
-          "
-        >
-          ${
-            game.muted
-            ? "Đang bật"
-            : "Đang tắt"
-          }
+            class="btn btn-yellow"
+            style="width:100%;margin:5px 0"
+            onclick="
+                closeModal();
+                closeEarly();
+            ">
+
+            🌙 Đóng cửa sớm
+
         </button>
 
-      </div>
 
-    </div>
+        <button
+            class="btn"
+            style="width:100%;margin:5px 0"
+            onclick="
+                muted = !muted;
+                toast(
+                    muted
+                    ? '🔇 Đã tắt âm thanh'
+                    : '🔊 Đã bật âm thanh'
+                );
+            ">
 
+            🔊 Âm thanh
 
-    <div class="card">
-
-      <b>
-        🌙 Đóng cửa sớm
-      </b>
-
-      <p class="muted">
-        Đóng quán ngay hôm nay.
-      </p>
-
-      <button
-        class="btn"
-        onclick="
-          closeEarly();
-          closeModal();
-        "
-      >
-        Đóng cửa
-      </button>
-
-    </div>
+        </button>
 
 
-    <div class="card">
+        <button
+            class="btn btn-blue"
+            style="width:100%;margin:5px 0"
+            onclick="
+                closeModal();
+                replayDay();
+            ">
 
-      <b>
-        🔄 Chơi lại ngày này
-      </b>
+            🔄 Chơi lại ngày
 
-      <p class="muted">
-        Giữ tiền và nâng cấp,
-        bắt đầu lại từ 07:00.
-      </p>
-
-      <button
-        class="btn"
-        onclick="
-          replayDay()
-        "
-      >
-        Chơi lại
-      </button>
-
-    </div>
+        </button>
 
 
-    <div class="card">
+        <button
+            class="btn btn-primary"
+            style="width:100%;margin:5px 0"
+            onclick="resetGame()">
 
-      <button
-        class="
-          btn
-          btn-danger
-        "
-        onclick="
-          resetGame()
-        "
-      >
-        🗑️ Xóa dữ liệu
-      </button>
+            🗑️ Xóa game
 
-    </div>
-
-  `);
-
-}
+        </button>
 
 
-function toggleMute() {
+        <button
+            class="btn"
+            style="width:100%;margin-top:10px"
+            onclick="closeModal()">
 
-  game.muted =
-    !game.muted;
+            Đóng
 
-  saveGame();
+        </button>
 
-  closeModal();
-
-  openSettings();
-
-}
-
-
-function replayDay() {
-
-  game.hour = 7;
-
-  game.minute = 0;
-
-  game.closed = false;
-
-  game.orders = [];
-
-
-  saveGame();
-
-  closeModal();
-
-  render();
-
-
-  toast(
-    "🔄 Đã chơi lại ngày!"
-  );
-
-}
-
-
-function resetGame() {
-
-  if (
-    confirm(
-      "Bạn có chắc muốn xóa toàn bộ game?"
-    )
-  ) {
-
-    localStorage.removeItem(
-      SAVE_KEY
-    );
-
-    location.reload();
-
-  }
+    `);
 
 }
 
 
 /* =====================================================
-   NEW CUSTOMER
+   REPLAY DAY
+===================================================== */
+
+function replayDay() {
+
+    if (
+        !confirm(
+            "Chơi lại ngày hiện tại?"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    game.hour =
+        7;
+
+    game.minute =
+        0;
+
+    game.orders =
+        [];
+
+    game.closed =
+        false;
+
+    game.servedToday =
+        0;
+
+    game.appToday =
+        0;
+
+    game.fiveStarToday =
+        0;
+
+
+    saveGame();
+
+    render();
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+function resetGame() {
+
+    if (
+        !confirm(
+            "Xóa toàn bộ tiến trình?"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+        "TIEM_BUN_MAM_FINAL"
+    );
+
+
+    location.reload();
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+function showModal(html) {
+
+    document.getElementById(
+        "modalContent"
+    ).innerHTML =
+        html;
+
+
+    document.getElementById(
+        "modal"
+    ).classList.remove(
+        "hidden"
+    );
+
+}
+
+
+function closeModal() {
+
+    document.getElementById(
+        "modal"
+    ).classList.add(
+        "hidden"
+    );
+
+}
+
+
+/* =====================================================
+   CREATE CUSTOMER
 ===================================================== */
 
 function createCustomer() {
 
-  if (
-    game.closed
-  ) return;
+    if (game.closed) return;
 
 
-  if (
-    game.orders.length >= 4
-  ) return;
+    if (game.hour >= 19) return;
 
 
-  const menuKeys =
-    Object.keys(
-      MENU
+    if (
+        game.orders.length >= 4
+    ) {
+
+        return;
+
+    }
+
+
+    const possible =
+        Object.keys(MENU)
+            .filter(key => {
+
+                const menu =
+                    MENU[key];
+
+
+                const enough =
+                    menu.ingredients
+                        .every(
+                            ingredient =>
+                                (
+                                    game.stock[
+                                        ingredient
+                                    ] || 0
+                                ) > 0
+                        );
+
+
+                return enough;
+
+            })
+            .filter(
+                key =>
+                    Math.random()
+                    <
+                    priceChance(key)
+            );
+
+
+    if (
+        possible.length === 0
+    ) {
+
+        return;
+
+    }
+
+
+    const menu =
+        possible[
+            Math.floor(
+                Math.random()
+                * possible.length
+            )
+        ];
+
+
+    const quantity =
+        MENU[menu].name === "Lẩu mắm"
+            ? 1
+            : (
+                Math.random() < .2
+                    ? 2
+                    : 1
+            );
+
+
+    const toppings = [];
+
+
+    if (
+        menu === "bunMam"
+    ) {
+
+        const toppingPool = [
+
+            "shrimp",
+            "squid",
+            "pork",
+            "fish",
+            "eggplant"
+
+        ];
+
+
+        toppingPool
+            .sort(
+                () =>
+                    Math.random() - .5
+            )
+            .slice(
+                0,
+                Math.floor(
+                    Math.random() * 3
+                )
+            )
+            .forEach(
+                x =>
+                    toppings.push(x)
+            );
+
+    }
+
+
+    const order = {
+
+        id:
+            Date.now()
+            + Math.random(),
+
+        name:
+            CUSTOMER_NAMES[
+                Math.floor(
+                    Math.random()
+                    * CUSTOMER_NAMES.length
+                )
+            ],
+
+        avatar:
+            CUSTOMER_AVATARS[
+                Math.floor(
+                    Math.random()
+                    * CUSTOMER_AVATARS.length
+                )
+            ],
+
+        menu,
+
+        quantity,
+
+        toppings,
+
+        patience:
+            100,
+
+        talk:
+            CUSTOMER_TALKS[
+                Math.floor(
+                    Math.random()
+                    * CUSTOMER_TALKS.length
+                )
+            ],
+
+        isApp:
+            Math.random() < .15
+
+    };
+
+
+    game.orders.push(
+        order
     );
 
 
-  const possible =
-    menuKeys.filter(
-      key => {
+    sound("bell");
 
-        return MENU[key]
-          .ingredients
-          .every(
-            ingredient =>
-              game.stock[
-                ingredient
-              ] > 0
-          );
-
-      }
-    );
-
-
-  if (
-    possible.length === 0
-  ) return;
-
-
-  const menuKey =
-    possible[
-      Math.floor(
-        Math.random() *
-        possible.length
-      )
-    ];
-
-
-  const names = [
-
-    "Cô Ba",
-    "Chú Tư",
-    "Bé Na",
-    "Anh Sáu",
-    "Chị Hai",
-    "Cậu Út",
-    "Dì Năm"
-
-  ];
-
-
-  const avatars = [
-
-    "👩‍🌾",
-    "🧑‍🌾",
-    "👒",
-    "🧔"
-
-  ];
-
-
-  let toppings = [];
-
-
-  if (
-    menuKey === "bun" ||
-    menuKey === "lau"
-  ) {
-
-    toppings = [
-
-      "shrimp",
-      "squid",
-      "pork",
-      "fish",
-      "eggplant",
-      "water",
-      "banana",
-      "chili",
-      "sauce"
-
-    ]
-      .sort(
-        () =>
-          Math.random() -
-          .5
-      )
-      .slice(
-        0,
-        3 +
-        Math.floor(
-          Math.random() * 3
-        )
-      );
-
-  }
-
-
-  game.orders.push({
-
-    name:
-      names[
-        Math.floor(
-          Math.random() *
-          names.length
-        )
-      ],
-
-    avatar:
-      avatars[
-        Math.floor(
-          Math.random() *
-          avatars.length
-        )
-      ],
-
-    menu:
-      menuKey,
-
-    toppings:
-      toppings,
-
-    patience: 100,
-
-    added: [],
-
-    poured: false,
-
-    ready: false
-
-  });
-
-
-  sound("bell");
-
-  render();
+    render();
 
 }
 
 
 /* =====================================================
-   GAME CLOCK
+   GAME TICK
 ===================================================== */
 
 function gameTick() {
 
-  if (
-    game.closed
-  ) return;
-
-
-  game.minute += 5;
-
-
-  if (
-    game.minute >= 60
-  ) {
-
-    game.hour++;
-
-    game.minute = 0;
-
-  }
-
-
-  /*
-    KHÁCH MẤT KIÊN NHẪN
-  */
-
-  game.orders.forEach(
-    order => {
-
-      let decrease = 2;
-
-
-      if (
-        game.upgrades.includes(
-          "fan"
-        )
-      ) {
-
-        decrease = 1.5;
-
-      }
-
-
-      if (
-        game.upgrades.includes(
-          "roof"
-        )
-      ) {
-
-        decrease = 1.1;
-
-      }
-
-
-      order.patience -=
-        decrease;
-
-    }
-  );
-
-
-  /*
-    KHÁCH BỎ ĐI
-  */
-
-  const left =
-    game.orders.filter(
-      order =>
-        order.patience <= 0
-    );
-
-
-  left.forEach(
-    order => {
-
-      addReview(
-        Math.random() < .7
-          ? 1
-          : 2
-      );
-
-
-      toast(
-        order.name +
-        " hết kiên nhẫn và bỏ đi 😥"
-      );
-
-    }
-  );
-
-
-  game.orders =
-    game.orders.filter(
-      order =>
-        order.patience > 0
-    );
-
-
-  /*
-    KHÁCH MỚI
-  */
-
-  if (
-    game.hour >= 7 &&
-    game.hour < 19
-  ) {
-
-    let chance =
-      0.25;
+    if (!game) return;
 
 
     if (
-      game.upgrades.includes(
-        "led"
-      )
+        game.paused ||
+        game.closed
     ) {
 
-      chance += .1;
+        return;
+
+    }
+
+
+    /*
+       5 phút trong game
+       mỗi 3.5 giây
+    */
+
+    game.minute += 5;
+
+
+    if (
+        game.minute >= 60
+    ) {
+
+        game.minute = 0;
+
+        game.hour++;
+
+    }
+
+
+    /* -----------------------------------------------
+       KHÁCH MẤT KIÊN NHẪN
+    ----------------------------------------------- */
+
+    game.orders.forEach(
+        order => {
+
+            let decrease =
+                3;
+
+
+            if (
+                game.upgrades
+                    .includes("fan")
+            ) {
+
+                decrease *= .9;
+
+            }
+
+
+            if (
+                game.upgrades
+                    .includes("roof")
+            ) {
+
+                decrease *= .8;
+
+            }
+
+
+            order.patience -=
+                decrease;
+
+        }
+    );
+
+
+    /* -----------------------------------------------
+       KHÁCH BỎ ĐI
+    ----------------------------------------------- */
+
+    const leaving =
+        game.orders
+            .filter(
+                order =>
+                    order.patience <= 0
+            );
+
+
+    leaving.forEach(
+        order => {
+
+            const index =
+                game.orders.indexOf(
+                    order
+                );
+
+
+            if (index >= 0) {
+
+                game.orders.splice(
+                    index,
+                    1
+                );
+
+            }
+
+
+            addReview(2);
+
+
+            toast(
+                `${order.name} bỏ đi vì chờ lâu 😭`
+            );
+
+        }
+    );
+
+
+    /* -----------------------------------------------
+       TẠO KHÁCH MỚI
+    ----------------------------------------------- */
+
+    let customerChance =
+        .27;
+
+
+    if (
+        game.upgrades
+            .includes("sign")
+    ) {
+
+        customerChance += .1;
+
+    }
+
+
+    /*
+       Rating thấp -> ít khách
+    */
+
+    if (
+        game.rating < 4
+    ) {
+
+        customerChance *= .65;
 
     }
 
 
     if (
-      Math.random() <
-      chance
+        Math.random()
+        < customerChance
     ) {
 
-      createCustomer();
+        createCustomer();
 
     }
 
-  }
+
+    /* -----------------------------------------------
+       ĐÓNG CỬA 19:00
+    ----------------------------------------------- */
+
+    if (
+        game.hour >= 19
+        &&
+        game.orders.length === 0
+    ) {
+
+        game.closed =
+            true;
+
+        toast(
+            "🌙 Đã đến giờ đóng cửa!"
+        );
+
+    }
 
 
-  /*
-    HẾT GIỜ
-  */
+    saveGame();
 
-  if (
-    game.hour >= 19 &&
-    game.orders.length === 0
-  ) {
-
-    game.closed = true;
-
-    toast(
-      "🌙 Hết giờ bán!"
-    );
-
-  }
-
-
-  saveGame();
-
-  render();
+    render();
 
 }
 
 
 /* =====================================================
-   INITIALIZE
+   STAFF TAB ACCESS
 ===================================================== */
 
-document
-  .querySelectorAll(
-    ".menu-button"
-  )
-  .forEach(
-    button => {
+function openStaff() {
 
-      button.addEventListener(
-        "click",
-        () => {
+    game.selectedTab =
+        "staff";
 
-          sound();
+    render();
 
-        }
-      );
+}
+
+
+/* =====================================================
+   INITIAL GAME
+===================================================== */
+
+function startGame() {
+
+    if (
+        loadGame()
+    ) {
+
+        render();
+
+        return;
 
     }
-  );
 
 
-askShopName();
+    showModal(`
 
-render();
+        <div class="modal-title">
+            🌴 Chào mừng đến Tiệm Bún Mắm!
+        </div>
+
+        <p>
+            Hãy đặt tên cho quán của bạn.
+        </p>
+
+        <input
+            id="shopNameInput"
+            maxlength="24"
+            placeholder="Ví dụ: Bún Mắm Út Thư">
+
+        <button
+            class="btn btn-primary"
+            style="width:100%"
+            onclick="createShop()">
+
+            🍜 Bắt đầu mở quán
+
+        </button>
+
+    `);
 
 
-/*
-  Mỗi 3.5 giây =
-  5 phút trong game
-*/
+    /*
+       Render shop trước
+    */
+
+    renderContent();
+
+}
+
+
+/* =====================================================
+   CREATE SHOP
+===================================================== */
+
+function createShop() {
+
+    const input =
+        document.getElementById(
+            "shopNameInput"
+        );
+
+
+    const name =
+        input.value.trim()
+        ||
+        "Tiệm Bún Mắm";
+
+
+    game =
+        createNewGame(
+            name
+        );
+
+
+    saveGame();
+
+    closeModal();
+
+    render();
+
+    toast(
+        `🌴 Chào mừng đến ${name}!`
+    );
+
+}
+
+
+/* =====================================================
+   OPEN STAFF FROM SHOP
+===================================================== */
+
+document.addEventListener(
+    "click",
+    event => {
+
+        /*
+           Không làm gì thêm.
+        */
+
+    }
+);
+
+
+/* =====================================================
+   START
+===================================================== */
+
+startGame();
+
+
+/* =====================================================
+   CLOCK
+===================================================== */
 
 setInterval(
-  gameTick,
-  3500
+    gameTick,
+    3500
+);
+
+
+/* =====================================================
+   STAFF BUTTON:
+   thêm nút Nhân viên nếu muốn mở riêng
+===================================================== */
+
+function showStaffFromMenu() {
+
+    renderStaff(
+        document.getElementById(
+            "content"
+        )
+    );
+
+}
+
+
+/* =====================================================
+   KEYBOARD / MOBILE
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeModal();
+
+        }
+
+    }
 );
